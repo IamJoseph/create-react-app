@@ -1,5 +1,5 @@
 const path = require("path");
-const resolve = dir => path.join(__dirname, "..", dir);
+const resolve = dir => path.join(process.cwd(), dir);
 
 module.exports = {
   "@": resolve("src"),
