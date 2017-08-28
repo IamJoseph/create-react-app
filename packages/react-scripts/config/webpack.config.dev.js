@@ -35,7 +35,7 @@ const env = getClientEnvironment(publicUrl);
 // '../../common/some/nested/Component
 // in favor of
 // '@common/some/nested/Component
-const aliases = require("./webpack.aliases");
+const aliases = require(path.join(process.cwd(), "src/utils/aliases"));
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.

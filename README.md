@@ -1,3 +1,19 @@
+This fork is a modification to react-scripts to allow aliases.
+Please create an alias file i.e. src/utils/alias.js similar to the folowing:
+
+```javascript
+const path = require("path");
+
+module.exports = {
+  "@": path.resolve("src"),
+  "@components": path.resolve("src/Components"),
+  "@containers": path.resolve("src/Containers"),
+  "@assets": path.resolve("src/assets"),
+  "@styles": path.resolve("src/styles")
+};
+```
+This will allow you to import aliases so we can get rid of things like '../../../component/Button' in favor of '@component/Button'
+
 # Create React App [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)](https://travis-ci.org/facebookincubator/create-react-app)
 
 Create React apps with no build configuration.
