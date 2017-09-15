@@ -359,6 +359,7 @@ module.exports = {
     dgram: "empty",
     fs: "empty",
     net: "empty",
-    tls: "empty"
+    tls: "empty",
+    child_process: "empty"
   }
 };
