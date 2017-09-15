@@ -9,13 +9,25 @@
 
 /* @flow */
 import React, { PureComponent } from 'react';
-import Overlay from '../components/Overlay';
+import ErrorOverlay from '../components/ErrorOverlay';
 import CloseButton from '../components/CloseButton';
 import NavigationBar from '../components/NavigationBar';
 import RuntimeError from './RuntimeError';
 import Footer from '../components/Footer';
 
-class RuntimeErrorContainer extends PureComponent {
+import type { ErrorRecord } from './RuntimeError';
+
+type Props = {|
+  errorRecords: ErrorRecord[],
+  close: () => void,
+  launchEditorEndpoint: ?string,
+|};
+
+type State = {|
+  currentIndex: number,
+|};
+
+class RuntimeErrorContainer extends PureComponent<Props, State> {
   state = {
     currentIndex: 0,
   };
@@ -52,15 +64,16 @@ class RuntimeErrorContainer extends PureComponent {
     const { errorRecords, close } = this.props;
     const totalErrors = errorRecords.length;
     return (
-      <Overlay shortcutHandler={this.shortcutHandler}>
+      <ErrorOverlay shortcutHandler={this.shortcutHandler}>
         <CloseButton close={close} />
-        {totalErrors > 1 &&
+        {totalErrors > 1 && (
           <NavigationBar
             currentError={this.state.currentIndex + 1}
             totalErrors={totalErrors}
             previous={this.previous}
             next={this.next}
-          />}
+          />
+        )}
         <RuntimeError
           errorRecord={errorRecords[this.state.currentIndex]}
           launchEditorEndpoint={this.props.launchEditorEndpoint}
@@ -69,7 +82,7 @@ class RuntimeErrorContainer extends PureComponent {
           line1="This screen is visible only in development. It will not appear if the app crashes in production."
           line2="Open your browser’s developer console to further inspect this error."
         />
-      </Overlay>
+      </ErrorOverlay>
     );
   }
 }
