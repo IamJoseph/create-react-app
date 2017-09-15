@@ -59,9 +59,13 @@ module.exports = {
     // require.resolve('webpack/hot/dev-server'),
     require.resolve("react-dev-utils/webpackHotDevClient"),
     // We ship a few polyfills by default:
+<<<<<<< HEAD
     require.resolve("./polyfills"),
     // Errors should be considered fatal in development
     require.resolve("react-error-overlay"),
+=======
+    require.resolve('./polyfills'),
+>>>>>>> master
     // Finally, this is your app's code:
     paths.appIndexJs
     // We include the app code last so that if there is a runtime error during
