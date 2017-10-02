@@ -9,7 +9,9 @@
 
 const fs = require("fs");
 const chalk = require("chalk");
+const path = require("path");
 const paths = require("../../config/paths");
+const aliases = require(path.join(process.cwd(), "src/utils/aliases"));
 
 module.exports = (resolve, rootDir, isEjecting) => {
   // Use this instead of `paths.testsSetup` to avoid putting
@@ -38,15 +40,13 @@ module.exports = (resolve, rootDir, isEjecting) => {
       "^(?!.*\\.(js|jsx|css|json)$)": resolve("config/jest/fileTransform.js")
     },
     transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-    moduleNameMapper: {
-      "^react-native$": "react-native-web",
-      "^@$": "<rootDir>/src",
-      "^@[/](.+)": "<rootDir>/src/$1",
-      "^@components[/](.+)": "<rootDir>/src/Components/$1",
-      "^@containers[/](.+)": "<rootDir>/src/Containers/$1",
-      "^@assets[/](.+)": "<rootDir>/src/assets/$1",
-      "@styles[/](.+)": "<rootDir>/src/styles/$1"
-    },
+    moduleNameMapper: Object.assign(
+      {},
+      {
+        "^react-native$": "react-native-web"
+      },
+      aliases.jestPath
+    ),
     moduleFileExtensions: ["web.js", "js", "json", "web.jsx", "jsx", "node"]
   };
   if (rootDir) {

@@ -1,15 +1,25 @@
 # react-scripts
 
-Please create an alias file i.e. src/utils/alias.js similar to the folowing:
+Please create an alias file i.e. src/utils/alias.js like so:
 ```javascript
 const path = require("path");
 
 module.exports = {
-  "@": path.resolve("src"),
-  "@components": path.resolve("src/Components"),
-  "@containers": path.resolve("src/Containers"),
-  "@assets": path.resolve("src/assets"),
-  "@styles": path.resolve("src/styles")
+  path: {
+    "@": path.resolve("src"),
+    "@components": path.resolve("src/Components"),
+    "@containers": path.resolve("src/Containers"),
+    "@assets": path.resolve("src/assets"),
+    "@styles": path.resolve("src/styles")
+  },
+  jestPath: {
+    "^@$": "<rootDir>/src",
+    "^@[/](.+)": "<rootDir>/src/$1",
+    "^@components[/](.+)": "<rootDir>/src/Components/$1",
+    "^@containers[/](.+)": "<rootDir>/src/Containers/$1",
+    "^@assets[/](.+)": "<rootDir>/src/assets/$1",
+    "@styles[/](.+)": "<rootDir>/src/styles/$1"
+  }
 };
 ```
 This package is a modification of scripts and configuration used by [Create React App](https://github.com/facebookincubator/create-react-app).<br>
