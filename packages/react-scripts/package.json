@@ -10,7 +10,13 @@
   "bugs": {
     "url": "https://github.com/IamJoseph/create-react-app/issues"
   },
-  "files": ["bin", "config", "scripts", "template", "utils"],
+  "files": [
+    "bin",
+    "config",
+    "scripts",
+    "template",
+    "utils"
+  ],
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
   },
@@ -53,7 +59,8 @@
   },
   "devDependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "webpack-dashboard": "^1.0.0"
   },
   "optionalDependencies": {
     "fsevents": "1.1.2"
