@@ -1,6 +1,6 @@
 {
   "name": "@iamjoseph/react-scripts",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Configuration and scripts for Create React App.",
   "repository": "IamJoseph/create-react-app",
   "license": "MIT",
@@ -53,8 +53,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "webpack-dashboard": "^1.0.0"
   },
   "optionalDependencies": {
