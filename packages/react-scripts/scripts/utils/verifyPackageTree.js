@@ -8,9 +8,12 @@
 
 'use strict';
 
-const chalk = require('chalk');
+const chalk = require('react-dev-utils/chalk');
 const fs = require('fs');
+const semver = require('semver');
 const path = require('path');
+
+const isESLintPluginEnabled = process.env.DISABLE_ESLINT_PLUGIN !== 'true';
 
 // We assume that having wrong versions of these
 // in the tree will likely break your setup.
@@ -20,14 +23,15 @@ function verifyPackageTree() {
     // These are packages most likely to break in practice.
     // See https://github.com/facebook/create-react-app/issues/1795 for reasons why.
     // I have not included Babel here because plugins typically don't import Babel (so it's not affected).
-    'babel-eslint',
     'babel-jest',
     'babel-loader',
-    'eslint',
     'jest',
     'webpack',
     'webpack-dev-server',
-  ];
+    isESLintPluginEnabled && 'babel-eslint',
+    isESLintPluginEnabled && 'eslint',
+  ].filter(Boolean);
+
   // Inlined from semver-regex, MIT license.
   // Don't want to make this a dependency after ejecting.
   const getSemverRegex = () =>
@@ -74,7 +78,7 @@ function verifyPackageTree() {
         fs.readFileSync(maybeDepPackageJson, 'utf8')
       );
       const expectedVersion = expectedVersionsByDep[dep];
-      if (depPackageJson.version !== expectedVersion) {
+      if (!semver.satisfies(depPackageJson.version, expectedVersion)) {
         console.error(
           chalk.red(
             `\nThere might be a problem with the project dependency tree.\n` +
@@ -97,7 +101,7 @@ function verifyPackageTree() {
             )}) \n\n` +
             `Manually installing incompatible versions is known to cause hard-to-debug issues.\n\n` +
             chalk.red(
-              `If prefer to ignore this check, add ${chalk.bold(
+              `If you would prefer to ignore this check, add ${chalk.bold(
                 'SKIP_PREFLIGHT_CHECK=true'
               )} to an ${chalk.bold('.env')} file in your project.\n` +
                 `That will permanently disable this message but you might encounter other issues.\n\n`

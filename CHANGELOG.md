@@ -1,677 +1,503 @@
-## 2.0.4 (October 3, 2018)
+## 4.0.3 (2021-02-22)
+
+v4.0.3 is a maintenance release that includes minor bug fixes and dependency updates.
 
 #### :bug: Bug Fix
 
 - `react-scripts`
-  - [#5281](https://github.com/facebook/create-react-app/pull/5281) Fix code minifying ([@Timer](https://github.com/Timer))
-  - [#5246](https://github.com/facebook/create-react-app/pull/5246) Fix `GENERATE_SOURCEMAP` env not working for css sourcemap ([@crux153](https://github.com/crux153))
-- `babel-preset-react-app`
-  - [#5278](https://github.com/facebook/create-react-app/pull/5278) Disable Symbol typeof transform ([@gaearon](https://github.com/gaearon))
-
-#### :nail_care: Enhancement
-
-- `create-react-app`
-  - [#5270](https://github.com/facebook/create-react-app/pull/5270) Caches the Yarn resolution for faster installs ([@arcanis](https://github.com/arcanis))
-  - [#5269](https://github.com/facebook/create-react-app/pull/5269) Adds a version check when using --use-pnp ([@arcanis](https://github.com/arcanis))
-- `react-scripts`
-  - [#5258](https://github.com/facebook/create-react-app/pull/5258) Add `.mjs` support back to webpack ([@Timer](https://github.com/Timer))
-
-#### :memo: Documentation
-
-- Other
-  - [#5228](https://github.com/facebook/create-react-app/pull/5228) removed create-react-app-parcel link ([@lockround](https://github.com/lockround))
-  - [#5254](https://github.com/facebook/create-react-app/pull/5254) Update README links for CSS modules and SASS ([@yuyokk](https://github.com/yuyokk))
-  - [#5249](https://github.com/facebook/create-react-app/pull/5249) Set the color palette to something a bit more React-y ([@selbekk](https://github.com/selbekk))
-  - [#5244](https://github.com/facebook/create-react-app/pull/5244) Update favicon and OpenGraph images ([@selbekk](https://github.com/selbekk))
-  - [#5242](https://github.com/facebook/create-react-app/pull/5242) 5238 Removing sample pages ([@selbekk](https://github.com/selbekk))
-  - [#5243](https://github.com/facebook/create-react-app/pull/5243) Set the project name and owner correctly ([@selbekk](https://github.com/selbekk))
-  - [#5239](https://github.com/facebook/create-react-app/pull/5239) 5238 removing blog from Docusaurus ([@selbekk](https://github.com/selbekk))
-  - [#5227](https://github.com/facebook/create-react-app/pull/5227) Initial setup of Docusaurus ([@amyrlam](https://github.com/amyrlam))
-- `react-scripts`
-  - [#5252](https://github.com/facebook/create-react-app/pull/5252) Revert change to http-proxy-middleware docs ([@iansu](https://github.com/iansu))
-  - [#5226](https://github.com/facebook/create-react-app/pull/5226) Fix usage of http-proxy-middleware ([@banyan](https://github.com/banyan))
-  - [#5233](https://github.com/facebook/create-react-app/pull/5233) DOCS: Add Relay example ([@zachasme](https://github.com/zachasme))
+  - [#10590](https://github.com/facebook/create-react-app/pull/10590) Upgrade eslint-webpack-plugin to fix opt-out flag ([@mrmckeb](https://github.com/mrmckeb))
 
 #### :house: Internal
 
-- [#5263](https://github.com/facebook/create-react-app/pull/5263) Add browser test for graphql ([@Timer](https://github.com/Timer))
+- `react-dev-utils`
+  - [#10412](https://github.com/facebook/create-react-app/pull/10412) update immer to 8.0.1 to address vulnerability ([@wclem4](https://github.com/wclem4))
+- `create-react-app`
+  - [#10384](https://github.com/facebook/create-react-app/pull/10384) tests: update test case to match the description ([@jamesgeorge007](https://github.com/jamesgeorge007))
 
-#### Committers: 11
+#### Committers: 4
 
-- Amy Lam ([@amyrlam](https://github.com/amyrlam))
-- Crux ([@crux153](https://github.com/crux153))
-- Dan Abramov ([@gaearon](https://github.com/gaearon))
-- Ian Sutherland ([@iansu](https://github.com/iansu))
-- Iurii Kucherov ([@yuyokk](https://github.com/yuyokk))
-- Joe Haddad ([@Timer](https://github.com/Timer))
-- Kohei Hasegawa ([@banyan](https://github.com/banyan))
-- Kristofer Selbekk ([@selbekk](https://github.com/selbekk))
-- Maël Nison ([@arcanis](https://github.com/arcanis))
-- Shubham Tiwari ([@lockround](https://github.com/lockround))
-- Zacharias Knudsen ([@zachasme](https://github.com/zachasme))
+- Brody McKee ([@mrmckeb](https://github.com/mrmckeb))
+- Dion Woolley ([@Awarua-](https://github.com/Awarua-))
+- James George ([@jamesgeorge007](https://github.com/jamesgeorge007))
+- Walker Clem ([@wclem4](https://github.com/wclem4))
 
-## 2.0.3 (October 1, 2018)
-
-Create React App 2.0 brings a year’s worth of improvements in a single dependency update.
-We summarized all of the changes in a blog post!<br>
-
-Check it out: **[Create React App 2.0: Babel 7, Sass, and More](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html)**.
-
-It provides a high-level overview of new features and improvements. Now let's see how to update your app to the latest version in detail.
-
-# Migrating from 1.x to 2.0.3
+# Migrating from 4.0.2 to 4.0.3
 
 Inside any created project that has not been ejected, run:
 
 ```bash
-npm install --save --save-exact react-scripts@2.0.3
+npm install --save --save-exact react-scripts@4.0.3
 ```
 
 or
 
 ```
-yarn add --exact react-scripts@2.0.3
+yarn add --exact react-scripts@4.0.3
 ```
 
-If you previously ejected but now want to upgrade, one common solution is to find the commits where you ejected (and any subsequent commits changing the configuration), revert them, upgrade, and later optionally eject again. It’s also possible that the feature you ejected for (maybe Sass or CSS Modules?) is now supported out of the box. You can find a list of notable new features in the **[Create React App 2.0 blog post](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html)**.
+## 4.0.2 (2021-02-03)
 
-## Breaking Changes
-
-Like any major release, `react-scripts@2.0` contains a few breaking changes. We expect that they won't affect every user, but we recommend to scan over these sections to see if something is relevant to you. If we missed something, please file a new issue.
-
-### Node 6 is no longer supported
-
-Please upgrade to Node 8 (LTS) or later.
-
-### Polyfills for IE 9, IE 10, and IE 11 are no longer included by default (but you can opt in!)
-
-We have dropped default support for Internet Explorer 9, 10, and 11. If you still need to support these browsers, follow the instructions below.
-
-First, install `react-app-polyfill`:
-
-```bash
-npm install react-app-polyfill
-```
-
-or
-
-```
-yarn add react-app-polyfill
-```
-
-Next, place one of the following lines at the very top of `src/index.js`:
-
-```js
-import 'react-app-polyfill/ie9'; // For IE 9-11 support
-import 'react-app-polyfill/ie11'; // For IE 11 support
-```
-
-You can read more about [these polyfills here](https://github.com/facebook/create-react-app/tree/master/packages/react-app-polyfill).
-
-### Dynamic `import()` of a CommonJS module now has a `.default` property
-
-[Webpack 4 changed the behavior of `import()`](https://medium.com/webpack/webpack-4-import-and-commonjs-d619d626b655) to be closer in line with the specification.
-
-Previously, importing a CommonJS module did not require you specify the default export. In most cases, this is now required.
-If you see errors in your application about `... is not a function`, you likely need to update your dynamic import, e.g.:
-
-```js
-const throttle = await import('lodash/throttle');
-// replace with
-const throttle = await import('lodash/throttle').then(m => m.default);
-```
-
-### `require.ensure()` is superseded by dynamic `import()`
-
-We previously allowed code splitting with a webpack-specific directive, `require.ensure()`. It is now disabled in favor of `import()`. To switch to `import()`, follow the examples below:
-
-**Single Module**
-
-```js
-require.ensure(['module-a'], function() {
-  var a = require('module-a');
-  // ...
-});
-
-// Replace with:
-import('module-a').then(a => {
-  // ...
-});
-```
-
-**Multiple Module**
-
-```js
-require.ensure(['module-a', 'module-b'], function() {
-  var a = require('module-a');
-  var b = require('module-b');
-  // ...
-});
-
-// Replace with:
-Promise.all([import('module-a'), import('module-b')]).then(([a, b]) => {
-  // ...
-});
-```
-
-### The default Jest environment was changed to `jsdom`
-
-Look at the `test` entry in the `scripts` section of your `package.json`.
-Here's a table how to change it from "before" and "after", depending on what you have there:
-
-| 1.x (if you have this...)        | 2.x (...change it to this!)     |
-| -------------------------------- | ------------------------------- |
-| `react-scripts test --env=jsdom` | `react-scripts test`            |
-| `react-scripts test`             | `react-scripts test --env=node` |
-
-### Object `proxy` configuration is superseded by `src/setupProxy.js`
-
-To check if action is required, look for the `proxy` key in `package.json` and follow this table:
-
-1. I couldn't find a `proxy` key in `package.json`
-   - No action is required!
-2. The value of `proxy` is a string (e.g. `http://localhost:5000`)
-   - No action is required!
-3. The value of `proxy` is an object
-   - Follow the migration instructions below.
-
-**It's worth highlighting: if your `proxy` field is a `string`, e.g. `http://localhost:5000`, or you don't have it, skip this section. This feature is still supported and has the same behavior.**
-
-If your `proxy` is an object, that means you are using the advanced proxy configuration. It has become fully customizable so we removed the limited support for the object-style configuration. Here's how to recreate it.
-
-First, install `http-proxy-middleware` using npm or Yarn:
-
-```bash
-npm install http-proxy-middleware
-```
-
-or
-
-```
-yarn add http-proxy-middleware
-```
-
-Next, create `src/setupProxy.js` and place the following contents in it:
-
-```js
-const proxy = require('http-proxy-middleware');
-
-module.exports = function(app) {
-  // ...
-};
-```
-
-Now, migrate each entry in your `proxy` object one by one, e.g.:
-
-```json
-"proxy": {
-  "/api": {
-    "target": "http://localhost:5000/"
-    },
-  "/*.svg": {
-    "target": "http://localhost:5000/"
-  }
-}
-```
-
-Place entries into `src/setupProxy.js` like so:
-
-```js
-const proxy = require('http-proxy-middleware');
-
-module.exports = function(app) {
-  app.use(proxy('/api', { target: 'http://localhost:5000/' }));
-  app.use(proxy('/*.svg', { target: 'http://localhost:5000/' }));
-};
-```
-
-You can also use completely custom logic there now! This wasn't possible before.
-
-### `.mjs` file extension support is removed
-
-Change the extension of any files in your project using `.mjs` to just `.js`.
-
-It was removed because of inconsistent support from underlying tools. We will add it back after it stops being experimental, and Jest gets built-in support for it.
-
-### `PropTypes` definitions are now removed in production
-
-Normally, this shouldn't affect your logic and should make the resulting bundle smaller. However, you may be relying on PropTypes definition for production logic. This is not recommended, and will break now. If a library does it, one possible solution is to file an issue in it with a proposal to use a different field (not `propTypes`) to signal that the declaration needs to be retained.
-
-### Anything missing?
-
-This was a large release, and we might have missed something.
-
-Please [file an issue](https://github.com/facebook/create-react-app/issues/new) and we will try to help.
-
-# Migrating from 2.0.0-next.xyz
-
-If you used 2.x alphas, please [follow these instructions](https://gist.github.com/gaearon/8650d1c70e436e5eff01f396dffc4114).
-
-# Detailed Changelog
-
-**For a readable summary of the changes, [check out our blog post](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html).**
+v4.0.2 is a maintenance release that includes minor bug fixes and documentation updates.
 
 #### :rocket: New Feature
 
 - `react-scripts`
-  - [#5218](https://github.com/facebook/create-react-app/pull/5218) Support globalSetup and globalTeardown Jest options ([@gaearon](https://github.com/gaearon))
-  - [#5073](https://github.com/facebook/create-react-app/pull/5073) Add user defined proxy via middleware ([@Timer](https://github.com/Timer))
-  - [#3945](https://github.com/facebook/create-react-app/pull/3945) Allow bundles to be analyzed with Webpack-specific tools ([@joshwcomeau](https://github.com/joshwcomeau))
-  - [#4195](https://github.com/facebook/create-react-app/pull/4195) Sass loader ([@Fabianopb](https://github.com/Fabianopb))
-  - [#3909](https://github.com/facebook/create-react-app/pull/3909) Add loader for .graphql files ([@petetnt](https://github.com/petetnt))
-  - [#1288](https://github.com/facebook/create-react-app/pull/1288) Create git repository with initial commit ([@mauricedb](https://github.com/mauricedb))
-  - [#3718](https://github.com/facebook/create-react-app/pull/3718) Import SVGs as React components (#1388) ([@iansu](https://github.com/iansu))
-  - [#2285](https://github.com/facebook/create-react-app/pull/2285) Add support for CSS Modules with explicit filename - [name].module.css ([@ro-savage](https://github.com/ro-savage))
-  - [#3804](https://github.com/facebook/create-react-app/pull/3804) Support Jest --watchAll flag ([@gaearon](https://github.com/gaearon))
-  - [#3802](https://github.com/facebook/create-react-app/pull/3802) Add feature #3116 extended Jest config ([@garmeeh](https://github.com/garmeeh))
-- `react-dev-utils`, `react-scripts`
-  - [#5058](https://github.com/facebook/create-react-app/pull/5058) Inline the webpack runtime chunk ([@Timer](https://github.com/Timer))
-- `babel-preset-react-app`
-  - [#5047](https://github.com/facebook/create-react-app/pull/5047) Allow dynamic import proposal in node_modules ([@Timer](https://github.com/Timer))
-  - [#3865](https://github.com/facebook/create-react-app/pull/3865) feat: add opt-out for prestet-flow to work with @babel/preset-typescript ([@oieduardorabelo](https://github.com/oieduardorabelo))
-  - [#3675](https://github.com/facebook/create-react-app/pull/3675) add experimental babel-plugin-macros support ([@kentcdodds](https://github.com/kentcdodds))
-- `babel-preset-react-app`, `confusing-browser-globals`, `eslint-config-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#4077](https://github.com/facebook/create-react-app/pull/4077) Webpack 4 ([@andriijas](https://github.com/andriijas))
-- `create-react-app`
-  - [#4350](https://github.com/facebook/create-react-app/pull/4350) Support package distribution tags ([@miraage](https://github.com/miraage))
-- `babel-preset-react-app`, `react-scripts`
-  - [#3776](https://github.com/facebook/create-react-app/pull/3776) Compile dependencies with babel-preset-env ([@gaearon](https://github.com/gaearon))
-
-#### :boom: Breaking Change
-
-- `react-app-polyfill`, `react-scripts`
-  - [#5090](https://github.com/facebook/create-react-app/pull/5090) Drop IE 11 support by default ([@Timer](https://github.com/Timer))
-- `react-scripts`
-  - [#5074](https://github.com/facebook/create-react-app/pull/5074) Change default test environment to jsdom ([@Timer](https://github.com/Timer))
-  - [#5027](https://github.com/facebook/create-react-app/pull/5027) Remove `mjs` support ([@Timer](https://github.com/Timer))
-  - [#4009](https://github.com/facebook/create-react-app/pull/4009) Update dotenv to 5.0.0 ([@iansu](https://github.com/iansu))
-  - [#2544](https://github.com/facebook/create-react-app/pull/2544) Set the public path to the asset manifest entries ([@robinvdvleuten](https://github.com/robinvdvleuten))
-  - [#3884](https://github.com/facebook/create-react-app/pull/3884) Don't use app node_modules folder as a resolve fallback ([@gaearon](https://github.com/gaearon))
-  - [#3817](https://github.com/facebook/create-react-app/pull/3817) Disable service worker by default ([@iansu](https://github.com/iansu))
-  - [#2285](https://github.com/facebook/create-react-app/pull/2285) Add support for CSS Modules with explicit filename - [name].module.css ([@ro-savage](https://github.com/ro-savage))
-  - [#3771](https://github.com/facebook/create-react-app/pull/3771) Add preflight check to guard against wrong versions of webpack/eslint/jest higher up the tree ([@gaearon](https://github.com/gaearon))
-  - [#3346](https://github.com/facebook/create-react-app/pull/3346) Change the default `start_url` to `.` ([@evilchuck](https://github.com/evilchuck))
-  - [#3419](https://github.com/facebook/create-react-app/pull/3419) Remove the navigateFallback behavior from the generated service worker ([@jeffposnick](https://github.com/jeffposnick))
-  - [#3644](https://github.com/facebook/create-react-app/pull/3644) Move browsers to cross-tool config ([@ai](https://github.com/ai))
-- `react-dev-utils`
-  - [#5072](https://github.com/facebook/create-react-app/pull/5072) Drop support for advanced proxy ([@Timer](https://github.com/Timer))
-- `babel-preset-react-app`
-  - [#3818](https://github.com/facebook/create-react-app/pull/3818) Remove PropTypes from production build (#209) ([@iansu](https://github.com/iansu))
-- `eslint-config-react-app`
-  - [#2319](https://github.com/facebook/create-react-app/pull/2319) Changes no-unused-expressions lint from warning to error ([@amupitan](https://github.com/amupitan))
-- `eslint-config-react-app`, `react-error-overlay`, `react-scripts`
-  - [#2690](https://github.com/facebook/create-react-app/pull/2690) Bump eslint-plugin-jsx-a11y version ([@gaearon](https://github.com/gaearon))
-- `eslint-config-react-app`, `react-scripts`
-  - [#3121](https://github.com/facebook/create-react-app/pull/3121) Redisable require.ensure() ([@everdimension](https://github.com/everdimension))
+  - [#8986](https://github.com/facebook/create-react-app/pull/8986) Add support for new BUILD_PATH advanced configuration variable ([@ajhyndman](https://github.com/ajhyndman))
 
 #### :bug: Bug Fix
 
 - `react-scripts`
-  - [#5217](https://github.com/facebook/create-react-app/pull/5217) Verify more package versions ([@Timer](https://github.com/Timer))
-  - [#5214](https://github.com/facebook/create-react-app/pull/5214) Fix absolute paths on eject ([@gaearon](https://github.com/gaearon))
-  - [#5212](https://github.com/facebook/create-react-app/pull/5212) Don't crash npm test when hg/git are missing ([@gaearon](https://github.com/gaearon))
-  - [#5197](https://github.com/facebook/create-react-app/pull/5197) Treat .css and .sass/.scss as side effectful ([@gaearon](https://github.com/gaearon))
-  - [#5196](https://github.com/facebook/create-react-app/pull/5196) Format SVG React snapshots as <svg> tag with props ([@gaearon](https://github.com/gaearon))
-  - [#5163](https://github.com/facebook/create-react-app/pull/5163) Correctly lookup assets when using a relative build directory ([@Timer](https://github.com/Timer))
-  - [#5151](https://github.com/facebook/create-react-app/pull/5151) Toggle `mjs` files to `javascript/auto` type ([@Timer](https://github.com/Timer))
-  - [#5131](https://github.com/facebook/create-react-app/pull/5131) Output CSS sourcemaps in separate file ([@Timer](https://github.com/Timer))
-  - [#5043](https://github.com/facebook/create-react-app/pull/5043) Always lint with latest React version ([@Timer](https://github.com/Timer))
-  - [#5030](https://github.com/facebook/create-react-app/pull/5030) Disable webpack chunk coalescing ([@Timer](https://github.com/Timer))
-  - [#5027](https://github.com/facebook/create-react-app/pull/5027) Remove `mjs` support ([@Timer](https://github.com/Timer))
-  - [#4706](https://github.com/facebook/create-react-app/pull/4706) Only use safe options when packing CSS assets ([@bugzpodder](https://github.com/bugzpodder))
-  - [#4562](https://github.com/facebook/create-react-app/pull/4562) Configured the thread-loader to keeping workers alive in development mode ([@sadkovoy](https://github.com/sadkovoy))
-  - [#4318](https://github.com/facebook/create-react-app/pull/4318) `.mjs` should not resolve before .js files (#4085) (#4317) ([@hobochild](https://github.com/hobochild))
-  - [#4419](https://github.com/facebook/create-react-app/pull/4419) Map (s?css|sass) modules to identity-obj-proxy in jest ([@kusold](https://github.com/kusold))
-  - [#4424](https://github.com/facebook/create-react-app/pull/4424) ensureSlash: Fix accidental string-to-NaN coercion ([@wchargin](https://github.com/wchargin))
-  - [#4376](https://github.com/facebook/create-react-app/pull/4376) Update sass-loader (#4363) ([@miraage](https://github.com/miraage))
-  - [#4247](https://github.com/facebook/create-react-app/pull/4247) Work around Jest environment resolving bug ([@gaearon](https://github.com/gaearon))
-  - [#4234](https://github.com/facebook/create-react-app/pull/4234) [next] Revert to use ecma 5 in uglifyOptions ([@danielberndt](https://github.com/danielberndt))
-  - [#2544](https://github.com/facebook/create-react-app/pull/2544) Set the public path to the asset manifest entries ([@robinvdvleuten](https://github.com/robinvdvleuten))
-  - [#3992](https://github.com/facebook/create-react-app/pull/3992) Upgrade dotenv-expand to 4.2.0 (#3961) ([@iansu](https://github.com/iansu))
-  - [#3989](https://github.com/facebook/create-react-app/pull/3989) add default value for globPatterns ([@viankakrisna](https://github.com/viankakrisna))
-- `react-error-overlay`
-  - [#5203](https://github.com/facebook/create-react-app/pull/5203) Fix IE 11 compatibility ([@Timer](https://github.com/Timer))
-  - [#5198](https://github.com/facebook/create-react-app/pull/5198) Polyfill error overlay for IE9 support ([@Timer](https://github.com/Timer))
-  - [#4024](https://github.com/facebook/create-react-app/pull/4024) Fix floating caret position incorrect while scrolling overlay ([@jihchi](https://github.com/jihchi))
-- `react-dev-utils`
-  - [#5184](https://github.com/facebook/create-react-app/pull/5184) Still emit runtime chunk ([@Timer](https://github.com/Timer))
-  - [#5137](https://github.com/facebook/create-react-app/pull/5137) Fix displaying third party webpack plugins errors ([@Fer0x](https://github.com/Fer0x))
-  - [#5134](https://github.com/facebook/create-react-app/pull/5134) Lists loader-utils in the dependencies ([@arcanis](https://github.com/arcanis))
-  - [#5025](https://github.com/facebook/create-react-app/pull/5025) Fix/file size reporter ([@fiddep](https://github.com/fiddep))
-  - [#4420](https://github.com/facebook/create-react-app/pull/4420) Update the thread loader test in formatWebpackMessages ([@marcofugaro](https://github.com/marcofugaro))
-- `babel-preset-react-app`
-  - [#5182](https://github.com/facebook/create-react-app/pull/5182) Strip flow syntax before any other transform ([@Timer](https://github.com/Timer))
-  - [#4630](https://github.com/facebook/create-react-app/pull/4630) Eliminate regenerator from preset-react-app plugins ([@conartist6](https://github.com/conartist6))
-  - [#5110](https://github.com/facebook/create-react-app/pull/5110) Add dynamic import transformer for dependencies in test env ([@lixiaoyan](https://github.com/lixiaoyan))
-  - [#5052](https://github.com/facebook/create-react-app/pull/5052) Add Babel config sourceType: 'unambiguous' for dependencies ([@lixiaoyan](https://github.com/lixiaoyan))
-  - [#5046](https://github.com/facebook/create-react-app/pull/5046) Correct Babel dependency behavior ([@Timer](https://github.com/Timer))
-  - [#4248](https://github.com/facebook/create-react-app/pull/4248) Enable loose mode for `class-properties` ([@rgrochowicz](https://github.com/rgrochowicz))
-- `babel-preset-react-app`, `react-error-overlay`, `react-scripts`
-  - [#5142](https://github.com/facebook/create-react-app/pull/5142) Remove runtime alias hack ([@Timer](https://github.com/Timer))
-- `react-app-polyfill`
-  - [#5132](https://github.com/facebook/create-react-app/pull/5132) Don't polyfill fetch for Node ([@Timer](https://github.com/Timer))
-- `react-error-overlay`, `react-scripts`
-  - [#5109](https://github.com/facebook/create-react-app/pull/5109) Prevent Babel config overridden ([@lixiaoyan](https://github.com/lixiaoyan))
-- `babel-preset-react-app`, `react-scripts`
-  - [#5078](https://github.com/facebook/create-react-app/pull/5078) Prevent the cache of files using Babel Macros ([@Timer](https://github.com/Timer))
-- `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#5026](https://github.com/facebook/create-react-app/pull/5026) Switch from uglifyjs to terser ([@Timer](https://github.com/Timer))
-- `create-react-app`
-  - [#4677](https://github.com/facebook/create-react-app/pull/4677) Support scoped package names for scripts-version option in create-react-app cli ([@bugzpodder](https://github.com/bugzpodder))
-  - [#2705](https://github.com/facebook/create-react-app/pull/2705) Don't delete error logs when install fails ([@mg](https://github.com/mg))
-- `react-dev-utils`, `react-scripts`
-  - [#4391](https://github.com/facebook/create-react-app/pull/4391) Update getCSSModuleLocalIdent to support Sass ([@arianon](https://github.com/arianon))
-- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `eslint-config-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#4159](https://github.com/facebook/create-react-app/pull/4159) Bump babel-related deps ([@existentialism](https://github.com/existentialism))
-- `create-react-app`, `react-dev-utils`, `react-scripts`
-  - [#3997](https://github.com/facebook/create-react-app/pull/3997) Use yarn when running inside yarn workspace. ([@bradfordlemley](https://github.com/bradfordlemley))
+  - [#10170](https://github.com/facebook/create-react-app/pull/10170) Add opt-out for eslint-webpack-plugin ([@mrmckeb](https://github.com/mrmckeb))
+  - [#9872](https://github.com/facebook/create-react-app/pull/9872) fix(react-scripts): add missing peer dependency react and update react-refresh-webpack-plugin ([@merceyz](https://github.com/merceyz))
+  - [#9964](https://github.com/facebook/create-react-app/pull/9964) Add TypeScript 4.x as peerDependency to react-scripts ([@sheepsteak](https://github.com/sheepsteak))
 
 #### :nail_care: Enhancement
 
-- `create-react-app`, `react-scripts`
-  - [#5136](https://github.com/facebook/create-react-app/pull/5136) Plug'n'Play support ([@arcanis](https://github.com/arcanis))
-- `react-dev-utils`, `react-scripts`
-  - [#5174](https://github.com/facebook/create-react-app/pull/5174) 💅 Polish webpack message output ([@Timer](https://github.com/Timer))
-  - [#5065](https://github.com/facebook/create-react-app/pull/5065) (Micro) Optimize webpack rebuild speed ([@Timer](https://github.com/Timer))
-  - [#5058](https://github.com/facebook/create-react-app/pull/5058) Inline the webpack runtime chunk ([@Timer](https://github.com/Timer))
-  - [#4192](https://github.com/facebook/create-react-app/pull/4192) Update CSS Modules localIndetName ([@ro-savage](https://github.com/ro-savage))
-  - [#3782](https://github.com/facebook/create-react-app/pull/3782) Tell user what browser support their application was built with ([@Timer](https://github.com/Timer))
-- `react-dev-utils`
-  - [#5150](https://github.com/facebook/create-react-app/pull/5150) Run behavioral smoke tests with Jest, add output tests ([@Timer](https://github.com/Timer))
-  - [#4623](https://github.com/facebook/create-react-app/pull/4623) Use yarn build command in predeploy script if using yarn ([@alexbrazier](https://github.com/alexbrazier))
-  - [#4470](https://github.com/facebook/create-react-app/pull/4470) Adjust browser defaults ([@Timer](https://github.com/Timer))
-  - [#4001](https://github.com/facebook/create-react-app/pull/4001) Add support for new yarn workspaces config format ([@detrohutt](https://github.com/detrohutt))
-  - [#3980](https://github.com/facebook/create-react-app/pull/3980) Autodetect GoLand editor ([@ifedyukin](https://github.com/ifedyukin))
-  - [#3808](https://github.com/facebook/create-react-app/pull/3808) Use wmic to get process list on Windows ([@levrik](https://github.com/levrik))
 - `react-scripts`
-  - [#4169](https://github.com/facebook/create-react-app/pull/4169) Workbox service worker ([@davejm](https://github.com/davejm))
-  - [#5096](https://github.com/facebook/create-react-app/pull/5096) Disable source maps for node_modules ([@Timer](https://github.com/Timer))
-  - [#4716](https://github.com/facebook/create-react-app/pull/4716) add postcss-preset-env, remove autoprefixer ([@heygrady](https://github.com/heygrady))
-  - [#1457](https://github.com/facebook/create-react-app/pull/1457) Add eslintConfig to new projects automatically ([@lifeiscontent](https://github.com/lifeiscontent))
-  - [#5030](https://github.com/facebook/create-react-app/pull/5030) Disable webpack chunk coalescing ([@Timer](https://github.com/Timer))
-  - [#4582](https://github.com/facebook/create-react-app/pull/4582) Added thread-loader tweak for application code entry-point ([@sadkovoy](https://github.com/sadkovoy))
-  - [#4562](https://github.com/facebook/create-react-app/pull/4562) Configured the thread-loader to keeping workers alive in development mode ([@sadkovoy](https://github.com/sadkovoy))
-  - [#4504](https://github.com/facebook/create-react-app/pull/4504) webpack 4 scope hoisting ([@bugzpodder](https://github.com/bugzpodder))
-  - [#4461](https://github.com/facebook/create-react-app/pull/4461) Update svgr ([@iansu](https://github.com/iansu))
-  - [#3867](https://github.com/facebook/create-react-app/pull/3867) Provide callbacks in serviceWorker (next) ([@piotr-cz](https://github.com/piotr-cz))
-  - [#3235](https://github.com/facebook/create-react-app/pull/3235) Applies new theme and adds docs link to template ([@lukejacksonn](https://github.com/lukejacksonn))
-  - [#3512](https://github.com/facebook/create-react-app/pull/3512) Enhance Jest config error for `setupTestFrameworkScriptFile` ([@jackfranklin](https://github.com/jackfranklin))
-  - [#3778](https://github.com/facebook/create-react-app/pull/3778) Compile code in parallel ([@Timer](https://github.com/Timer))
-  - [#3771](https://github.com/facebook/create-react-app/pull/3771) Add preflight check to guard against wrong versions of webpack/eslint/jest higher up the tree ([@gaearon](https://github.com/gaearon))
-  - [#3618](https://github.com/facebook/create-react-app/pull/3618) use uglifyjs-webpack-plugin v1 ([@viankakrisna](https://github.com/viankakrisna))
-- `babel-preset-react-app`, `react-error-overlay`, `react-scripts`
-  - [#5093](https://github.com/facebook/create-react-app/pull/5093) Turn on Babel `helpers` ([@Timer](https://github.com/Timer))
-- `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#4930](https://github.com/facebook/create-react-app/pull/4930) Switch from cheap-module-source-map eval-source-map ([@jasonLaster](https://github.com/jasonLaster))
-  - [#3124](https://github.com/facebook/create-react-app/pull/3124) update jest to 22 and support watchPathIgnorePatterns configuration ([@aisensiy](https://github.com/aisensiy))
-- `confusing-browser-globals`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#4846](https://github.com/facebook/create-react-app/pull/4846) Update jest version ([@skoging](https://github.com/skoging))
-  - [#4362](https://github.com/facebook/create-react-app/pull/4362) Bumped jest version to 22.4.1 ([@CGreenburg](https://github.com/CGreenburg))
-- `babel-preset-react-app`, `confusing-browser-globals`, `eslint-config-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#4077](https://github.com/facebook/create-react-app/pull/4077) Webpack 4 ([@andriijas](https://github.com/andriijas))
-- `babel-preset-react-app`
-  - [#4432](https://github.com/facebook/create-react-app/pull/4432) Update babel-plugin-macros to fix a bug ([@stereobooster](https://github.com/stereobooster))
-  - [#3818](https://github.com/facebook/create-react-app/pull/3818) Remove PropTypes from production build (#209) ([@iansu](https://github.com/iansu))
-- `create-react-app`
-  - [#4375](https://github.com/facebook/create-react-app/pull/4375) fix: update envinfo + implementation, update issue_template ([@tabrindle](https://github.com/tabrindle))
-- `eslint-config-react-app`, `react-error-overlay`, `react-scripts`
-  - [#4048](https://github.com/facebook/create-react-app/pull/4048) Add ESLint check for incorrect propTypes usage (#3840) ([@iansu](https://github.com/iansu))
-  - [#2690](https://github.com/facebook/create-react-app/pull/2690) Bump eslint-plugin-jsx-a11y version ([@gaearon](https://github.com/gaearon))
-- `eslint-config-react-app`
-  - [#3844](https://github.com/facebook/create-react-app/pull/3844) remove radix eslint rule ([@sendilkumarn](https://github.com/sendilkumarn))
-- `create-react-app`, `react-dev-utils`, `react-scripts`
-  - [#3792](https://github.com/facebook/create-react-app/pull/3792) Offer to set default browsers ([@Timer](https://github.com/Timer))
-- `babel-preset-react-app`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#3785](https://github.com/facebook/create-react-app/pull/3785) Bump dependencies ([@gaearon](https://github.com/gaearon))
-- `babel-preset-react-app`, `react-scripts`
-  - [#3770](https://github.com/facebook/create-react-app/pull/3770) Loosen Babel preset to use browserslist ([@Timer](https://github.com/Timer))
-- `babel-preset-react-app`, `eslint-config-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#3522](https://github.com/facebook/create-react-app/pull/3522) Switch to Babel 7 ([@clemmy](https://github.com/clemmy))
+  - [#9977](https://github.com/facebook/create-react-app/pull/9977) Move ESLint cache file into node_modules ([@ehsankhfr](https://github.com/ehsankhfr))
+  - [#9569](https://github.com/facebook/create-react-app/pull/9569) Improve vendor chunk names in development ([@jrr](https://github.com/jrr))
 
 #### :memo: Documentation
 
+- [#9473](https://github.com/facebook/create-react-app/pull/9473) docs: add missing override options for Jest config ([@tobiasbueschel](https://github.com/tobiasbueschel))
+- [#10314](https://github.com/facebook/create-react-app/pull/10314) Update using-the-public-folder.md ([@Avivhdr](https://github.com/Avivhdr))
+- [#10214](https://github.com/facebook/create-react-app/pull/10214) Remove references to Node 8 ([@ianschmitz](https://github.com/ianschmitz))
+
+#### :house: Internal
+
 - `react-scripts`
-  - [#5211](https://github.com/facebook/create-react-app/pull/5211) Adds instructions to README on how to customize Bootstrap with Sass ([@mslooten](https://github.com/mslooten))
-  - [#5147](https://github.com/facebook/create-react-app/pull/5147) Document adding SVGs as React components ([@mareksuscak](https://github.com/mareksuscak))
-  - [#5193](https://github.com/facebook/create-react-app/pull/5193) Fix typo in 'Configuring the Proxy Manually' ([@fabriziocucci](https://github.com/fabriziocucci))
-  - [#5111](https://github.com/facebook/create-react-app/pull/5111) Updates to README to reflect Workbox usage. ([@jeffposnick](https://github.com/jeffposnick))
-  - [#5169](https://github.com/facebook/create-react-app/pull/5169) Add additional troubleshooting for Github Pages ([@dwang](https://github.com/dwang))
-  - [#5145](https://github.com/facebook/create-react-app/pull/5145) Mention .module.scss/sass convention ([@mareksuscak](https://github.com/mareksuscak))
-  - [#5105](https://github.com/facebook/create-react-app/pull/5105) as per #5104 ([@sag1v](https://github.com/sag1v))
-  - [#5071](https://github.com/facebook/create-react-app/pull/5071) Update usage advice of husky to 1.0 ([@martinlechner1](https://github.com/martinlechner1))
-  - [#5077](https://github.com/facebook/create-react-app/pull/5077) small typo fix ([@tteltrab](https://github.com/tteltrab))
-  - [#5070](https://github.com/facebook/create-react-app/pull/5070) Integrating with an API Backend: add API Platform ([@dunglas](https://github.com/dunglas))
-  - [#5064](https://github.com/facebook/create-react-app/pull/5064) fix minor typo in troubleshooting github pages ([@kaznovac](https://github.com/kaznovac))
-  - [#5035](https://github.com/facebook/create-react-app/pull/5035) Remove paywalled tutorial link for Storybook ([@imgntn](https://github.com/imgntn))
-  - [#3924](https://github.com/facebook/create-react-app/pull/3924) Updates to reflect service worker registration being opt-in. ([@jeffposnick](https://github.com/jeffposnick))
-  - [#4881](https://github.com/facebook/create-react-app/pull/4881) flowtype.org -> flow.org ([@web2033](https://github.com/web2033))
-  - [#4825](https://github.com/facebook/create-react-app/pull/4825) Update support info for service workers ([@j-f1](https://github.com/j-f1))
-  - [#4738](https://github.com/facebook/create-react-app/pull/4738) Fix typo ([@mjw56](https://github.com/mjw56))
-  - [#4741](https://github.com/facebook/create-react-app/pull/4741) remove extra dot on devtool link comment ([@shelldandy](https://github.com/shelldandy))
-  - [#4703](https://github.com/facebook/create-react-app/pull/4703) Suggest `reactstrap` instead of `react-bootstrap` ([@zx6658](https://github.com/zx6658))
-  - [#4566](https://github.com/facebook/create-react-app/pull/4566) Move whitespace comment closer to where it applies ([@mgedmin](https://github.com/mgedmin))
-  - [#4497](https://github.com/facebook/create-react-app/pull/4497) [Read Me template patch] Warn about #871 until it's actually fixed. ([@saimonmoore](https://github.com/saimonmoore))
-  - [#4205](https://github.com/facebook/create-react-app/pull/4205) Chokidar Updates ([@originell](https://github.com/originell))
-  - [#4286](https://github.com/facebook/create-react-app/pull/4286) Fix some typos in README.md ([@apaatsio](https://github.com/apaatsio))
-  - [#4298](https://github.com/facebook/create-react-app/pull/4298) Added learnstorybook.com to Storybook links ([@tmeasday](https://github.com/tmeasday))
-  - [#4117](https://github.com/facebook/create-react-app/pull/4117) Document multiple build environments via `env-cmd` #4071 ([@jMuzsik](https://github.com/jMuzsik))
-  - [#4197](https://github.com/facebook/create-react-app/pull/4197) Add troubleshooting for Github Pages ([@xnt](https://github.com/xnt))
-  - [#4236](https://github.com/facebook/create-react-app/pull/4236) use the lastest url of gitignore file ([@Plortinus](https://github.com/Plortinus))
-  - [#4239](https://github.com/facebook/create-react-app/pull/4239) Fix typo in comment and be clearer about `ecma` settings in uglifyjs options ([@danielberndt](https://github.com/danielberndt))
-  - [#4164](https://github.com/facebook/create-react-app/pull/4164) Fix typos in example monorepo documentation. ([@bradfordlemley](https://github.com/bradfordlemley))
-  - [#4089](https://github.com/facebook/create-react-app/pull/4089) Fix a typo in packages/react-scripts/template/README.md ([@nott](https://github.com/nott))
-  - [#4101](https://github.com/facebook/create-react-app/pull/4101) Docs: Update status of Object Rest/Spread proposal ([@jpaquim](https://github.com/jpaquim))
-  - [#4107](https://github.com/facebook/create-react-app/pull/4107) docs: use node_js 8 in example travis.yml ([@nikolas2](https://github.com/nikolas2))
-  - [#3821](https://github.com/facebook/create-react-app/pull/3821) Updated react-scripts Readme.md to better document GitHub Pages ([@EdwaRen](https://github.com/EdwaRen))
-- Other
-  - [#5102](https://github.com/facebook/create-react-app/pull/5102) Fix Troubleshooting link ([@gdi2290](https://github.com/gdi2290))
-  - [#4551](https://github.com/facebook/create-react-app/pull/4551) Update targeted IE version in documentation ([@antzshrek](https://github.com/antzshrek))
-  - [#4814](https://github.com/facebook/create-react-app/pull/4814) Update CODE_OF_CONDUCT.md ([@Ashleyotero](https://github.com/Ashleyotero))
-  - [#4638](https://github.com/facebook/create-react-app/pull/4638) Add instructions on alternative methods of app creation ([@RusinovAnton](https://github.com/RusinovAnton))
-  - [#4546](https://github.com/facebook/create-react-app/pull/4546) Update file tree view ([@antzshrek](https://github.com/antzshrek))
-  - [#4449](https://github.com/facebook/create-react-app/pull/4449) add create-react-app-parcel to Alternatives section in README ([@sw-yx](https://github.com/sw-yx))
-  - [#4294](https://github.com/facebook/create-react-app/pull/4294) documentation: added License to the README.md ([@thiagopaiva99](https://github.com/thiagopaiva99))
-  - [#4323](https://github.com/facebook/create-react-app/pull/4323) Fix typo in e2e-simple.sh comment ([@bmuenzenmeyer](https://github.com/bmuenzenmeyer))
-  - [#4134](https://github.com/facebook/create-react-app/pull/4134) fix: Minor typos ([@fejes713](https://github.com/fejes713))
-  - [#4114](https://github.com/facebook/create-react-app/pull/4114) Update CONTRIBUTING.md ([@jkzing](https://github.com/jkzing))
-  - [#3825](https://github.com/facebook/create-react-app/pull/3825) Add svg rendering for error example ([@marionebl](https://github.com/marionebl))
-  - [#3810](https://github.com/facebook/create-react-app/pull/3810) Update screencast to use npx ([@marionebl](https://github.com/marionebl))
+  - [#10027](https://github.com/facebook/create-react-app/pull/10027) appTsConfig immutability handling by immer ([@josezone](https://github.com/josezone))
 - `create-react-app`
-  - [#4309](https://github.com/facebook/create-react-app/pull/4309) Fix typo to word bootstrapped in condition to check for old version o… ([@jamesvsshark](https://github.com/jamesvsshark))
-  - [#4015](https://github.com/facebook/create-react-app/pull/4015) add `create-react-app --help` info for local file path `--scripts-version` support ([@albertstill](https://github.com/albertstill))
+  - [#10217](https://github.com/facebook/create-react-app/pull/10217) Fix CI tests ([@ianschmitz](https://github.com/ianschmitz))
+- `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#10091](https://github.com/facebook/create-react-app/pull/10091) Recovered some integration tests ([@maxsbelt](https://github.com/maxsbelt))
+
+#### :hammer: Underlying Tools
+
+- `react-scripts`
+  - [#10216](https://github.com/facebook/create-react-app/pull/10216) Revert "Update postcss packages" ([@ianschmitz](https://github.com/ianschmitz))
+  - [#9988](https://github.com/facebook/create-react-app/pull/9988) Upgrade sass-loader ([@ehsankhfr](https://github.com/ehsankhfr))
+  - [#10003](https://github.com/facebook/create-react-app/pull/10003) Update postcss packages ([@raix](https://github.com/raix))
+  - [#10213](https://github.com/facebook/create-react-app/pull/10213) Upgrade @svgr/webpack to fix build error ([@jabranr](https://github.com/jabranr))
+- `react-dev-utils`
+  - [#10198](https://github.com/facebook/create-react-app/pull/10198) remove chalk from formatWebpackMessages ([@jasonwilliams](https://github.com/jasonwilliams))
+- `cra-template-typescript`
+  - [#10141](https://github.com/facebook/create-react-app/pull/10141) chore: bump typescript version ([@trainto](https://github.com/trainto))
+- `cra-template-typescript`, `cra-template`
+  - [#10143](https://github.com/facebook/create-react-app/pull/10143) chore: bump web-vital dependency version ([@sahilpurav](https://github.com/sahilpurav))
+
+#### Committers: 15
+
+- Andrew Hyndman ([@ajhyndman](https://github.com/ajhyndman))
+- Aviv Hadar ([@Avivhdr](https://github.com/Avivhdr))
+- Brody McKee ([@mrmckeb](https://github.com/mrmckeb))
+- Chris Shepherd ([@sheepsteak](https://github.com/sheepsteak))
+- EhsanKhaki ([@ehsankhfr](https://github.com/ehsankhfr))
+- Hakjoon Sim ([@trainto](https://github.com/trainto))
+- Ian Schmitz ([@ianschmitz](https://github.com/ianschmitz))
+- Jabran Rafique⚡️ ([@jabranr](https://github.com/jabranr))
+- Jason Williams ([@jasonwilliams](https://github.com/jasonwilliams))
+- John Ruble ([@jrr](https://github.com/jrr))
+- Kristoffer K. ([@merceyz](https://github.com/merceyz))
+- Morten N.O. Nørgaard Henriksen ([@raix](https://github.com/raix))
+- Sahil Purav ([@sahilpurav](https://github.com/sahilpurav))
+- Sergey Makarov ([@maxsbelt](https://github.com/maxsbelt))
+- Tobias Büschel ([@tobiasbueschel](https://github.com/tobiasbueschel))
+- mad-jose ([@josezone](https://github.com/josezone))
+
+# Migrating from 4.0.1 to 4.0.2
+
+Inside any created project that has not been ejected, run:
+
+```bash
+npm install --save --save-exact react-scripts@4.0.2
+```
+
+or
+
+```
+yarn add --exact react-scripts@4.0.2
+```
+
+## 4.0.1 (2020-11-23)
+
+v4.0.1 is a maintenance release that includes minor bug fixes and documentation updates.
+
+#### :bug: Bug Fix
+
+- `react-scripts`
+  - [#9921](https://github.com/facebook/create-react-app/pull/9921) Fix noFallthroughCasesInSwitch/jsx object is not extensible ([@ryota-murakami](https://github.com/ryota-murakami))
+  - [#9869](https://github.com/facebook/create-react-app/pull/9869) Fix react-jsx error ([@benneq](https://github.com/benneq))
+  - [#9885](https://github.com/facebook/create-react-app/pull/9885) fix: `React is not defined` compilation error after ejected ([@n3tr](https://github.com/n3tr))
+  - [#9911](https://github.com/facebook/create-react-app/pull/9911) fix: slow recompile time ([@FezVrasta](https://github.com/FezVrasta))
+- `react-dev-utils`
+  - [#9884](https://github.com/facebook/create-react-app/pull/9884) fix: page doesn't get refreshed when FAST_REFRESH=false ([@n3tr](https://github.com/n3tr))
+
+#### :nail_care: Enhancement
+
+- `react-scripts`
+  - [#10048](https://github.com/facebook/create-react-app/pull/10048) Increase Workbox's maximumFileSizeToCacheInBytes ([@jeffposnick](https://github.com/jeffposnick))
+
+#### :memo: Documentation
+
+- [#10052](https://github.com/facebook/create-react-app/pull/10052) docs: add React Testing Library as a library requiring jsdom ([@anyulled](https://github.com/anyulled))
+
+#### :house: Internal
+
+- `create-react-app`, `react-dev-utils`, `react-scripts`
+  - [#10083](https://github.com/facebook/create-react-app/pull/10083) replace inquirer with prompts ([@EvanBacon](https://github.com/EvanBacon))
+- `cra-template-typescript`, `cra-template`, `react-scripts`
+  - [#9516](https://github.com/facebook/create-react-app/pull/9516) [ImgBot] Optimize images ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- Other
+  - [#9860](https://github.com/facebook/create-react-app/pull/9860) chore: Update .prettierrc ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+
+#### Committers: 9
+
+- Anyul Rivas ([@anyulled](https://github.com/anyulled))
+- Ben M ([@benneq](https://github.com/benneq))
+- Evan Bacon ([@EvanBacon](https://github.com/EvanBacon))
+- Federico Zivolo ([@FezVrasta](https://github.com/FezVrasta))
+- Jeffrey Posnick ([@jeffposnick](https://github.com/jeffposnick))
+- Jirat Ki. ([@n3tr](https://github.com/n3tr))
+- Michaël De Boey ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- Ryota Murakami ([@ryota-murakami](https://github.com/ryota-murakami))
+- sho90 ([@sho-t](https://github.com/sho-t))
+
+# Migrating from 4.0.0 to 4.0.1
+
+Inside any created project that has not been ejected, run:
+
+```bash
+npm install --save --save-exact react-scripts@4.0.1
+```
+
+or
+
+```
+yarn add --exact react-scripts@4.0.1
+```
+
+## 4.0.0 (2020-10-23)
+
+Create React App 4.0 is a major release with several new features, including support for Fast Refresh!
+
+Thanks to all the maintainers and contributors who worked so hard on this release! :raised_hands:
+
+# Highlights
+
+- Fast Refresh [#8582](https://github.com/facebook/create-react-app/pull/8582)
+- React 17 support
+  - New JSX transform [#9645](https://github.com/facebook/create-react-app/pull/9645)
+- TypeScript 4 support [#9734](https://github.com/facebook/create-react-app/pull/9734)
+- ESLint 7 [#8978](https://github.com/facebook/create-react-app/pull/8978)
+  - New Jest and React Testing Library rules [#8963](https://github.com/facebook/create-react-app/pull/8963)
+- Jest 26 [#8955](https://github.com/facebook/create-react-app/pull/8955)
+- PWA/workbox improvements
+  - Switch to the Workbox InjectManifest plugin [#9205](https://github.com/facebook/create-react-app/pull/9205)
+  - Now its own template so it can be released independently
+- Web Vitals support [#9116](https://github.com/facebook/create-react-app/pull/9116)
+
+# Migrating from 3.4.x to 4.0.0
+
+Inside any created project that has not been ejected, run:
+
+```bash
+npm install --save --save-exact react-scripts@4.0.0
+```
+
+or
+
+```
+yarn add --exact react-scripts@4.0.0
+```
+
+**NOTE: You may need to delete your `node_modules` folder and reinstall your dependencies by running `yarn` (or `npm install`) if you encounter errors after upgrading.**
+
+If you previously ejected but now want to upgrade, one common solution is to find the commits where you ejected (and any subsequent commits changing the configuration), revert them, upgrade, and later optionally eject again. It’s also possible that the feature you ejected for is now supported out of the box.
+
+## Breaking Changes
+
+Like any major release, `react-scripts@4.0.0` contains a number of breaking changes. We expect that they won't affect every user, but we recommend you look over this section to see if something is relevant to you. If we missed something, please file a new issue.
+
+### ESLint
+
+We've upgraded to ESLint 7 and added many new rules including some for Jest and React Testing Library as well as the `import/no-anonymous-default-export` rule. We've also upgraded `eslint-plugin-hooks` to version 4.0.0 and removed the `EXTEND_ESLINT` flag as it is no longer required to customize the ESLint config.
+
+### Jest
+
+We've upgraded to Jest 26 and now set `resetMocks` to `true` by default in the Jest config.
+
+### Service workers
+
+We've switched to the Workbox InjectManifest plugin and moved the PWA templates into their own [repository](https://github.com/cra-template/pwa).
+
+### Removed `typescript` flag and `NODE_PATH` support
+
+We've removed the deprecated `typescript` flag when creating a new app. Use `--template typescript` instead. We've also dropped deprecated `NODE_PATH` flag as this has been replaced by setting the base path in `jsconfig.json`.
+
+### Fix dotenv file loading order
+
+We've changed the loading order of env files to match the `dotenv` specification. See #9037 for more details.
+
+### Dropped Node 8 support
+
+Node 8 reached End-of-Life at the end of 2019 and is no longer supported.
+
+# Detailed Changelog
+
+#### :rocket: New Feature
+
+- `eslint-config-react-app`, `react-error-overlay`, `react-scripts`
+  - [#8963](https://github.com/facebook/create-react-app/pull/8963) feat(eslint-config-react-app): Add jest & testing-library rules ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- `react-scripts`
+  - [#9611](https://github.com/facebook/create-react-app/pull/9611) Add AVIF image support ([@Hongbo-Miao](https://github.com/Hongbo-Miao))
+  - [#9114](https://github.com/facebook/create-react-app/pull/9114) Allow testMatch for jest config ([@Favna](https://github.com/Favna))
+  - [#8790](https://github.com/facebook/create-react-app/pull/8790) Add back in --stats output from webpack. ([@samccone](https://github.com/samccone))
+  - [#8838](https://github.com/facebook/create-react-app/pull/8838) Support devDependencies in templates ([@mrmckeb](https://github.com/mrmckeb))
+- `create-react-app`
+  - [#9359](https://github.com/facebook/create-react-app/pull/9359) feat: exit on outdated create-react-app version ([@mrmckeb](https://github.com/mrmckeb))
+- `cra-template-typescript`, `cra-template`, `react-scripts`
+  - [#9205](https://github.com/facebook/create-react-app/pull/9205) Switch to the Workbox InjectManifest plugin ([@jeffposnick](https://github.com/jeffposnick))
 - `react-dev-utils`, `react-scripts`
-  - [#3836](https://github.com/facebook/create-react-app/pull/3836) Use custom bit.ly links ([@bondz](https://github.com/bondz))
+  - [#8582](https://github.com/facebook/create-react-app/pull/8582) Add experimental react-refresh support ([@charrondev](https://github.com/charrondev))
+
+#### :boom: Breaking Change
+
+- `eslint-config-react-app`, `react-error-overlay`, `react-scripts`
+  - [#8963](https://github.com/facebook/create-react-app/pull/8963) feat(eslint-config-react-app): Add jest & testing-library rules ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+  - [#8978](https://github.com/facebook/create-react-app/pull/8978) Support ESLint 7.x ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- `cra-template-typescript`, `cra-template`, `eslint-config-react-app`, `react-error-overlay`, `react-scripts`
+  - [#9587](https://github.com/facebook/create-react-app/pull/9587) Remove EXTEND_ESLINT and add Jest rules ([@mrmckeb](https://github.com/mrmckeb))
+- `eslint-config-react-app`
+  - [#9401](https://github.com/facebook/create-react-app/pull/9401) fix: remove deprecated rule ([@ljosberinn](https://github.com/ljosberinn))
+- `create-react-app`
+  - [#9359](https://github.com/facebook/create-react-app/pull/9359) feat: exit on outdated create-react-app version ([@mrmckeb](https://github.com/mrmckeb))
+- `cra-template-typescript`, `cra-template`, `react-scripts`
+  - [#9205](https://github.com/facebook/create-react-app/pull/9205) Switch to the Workbox InjectManifest plugin ([@jeffposnick](https://github.com/jeffposnick))
+- `babel-plugin-named-asset-import`, `confusing-browser-globals`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8955](https://github.com/facebook/create-react-app/pull/8955) Upgrade to Jest 26 ([@ianschmitz](https://github.com/ianschmitz))
+- `create-react-app`, `react-scripts`
+  - [#8934](https://github.com/facebook/create-react-app/pull/8934) feat: remove typescript flag and NODE_PATH support ([@mrmckeb](https://github.com/mrmckeb))
+- `react-scripts`
+  - [#9037](https://github.com/facebook/create-react-app/pull/9037) Fix dotenv file loading order ([@Timer](https://github.com/Timer))
+  - [#7899](https://github.com/facebook/create-react-app/pull/7899) Set resetMocks to true by default in jest config ([@alexkrolick](https://github.com/alexkrolick))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `create-react-app`, `react-app-polyfill`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8950](https://github.com/facebook/create-react-app/pull/8950) Dependency major version upgrades ([@ianschmitz](https://github.com/ianschmitz))
+- `eslint-config-react-app`, `react-scripts`
+  - [#8926](https://github.com/facebook/create-react-app/pull/8926) Add import/no-anonymous-default-export lint rule ([@shakib609](https://github.com/shakib609))
+  - [#8939](https://github.com/facebook/create-react-app/pull/8939) Bump React Hooks ESLint plugin to 4.0.0 ([@gaearon](https://github.com/gaearon))
+- `cra-template-typescript`, `cra-template`, `create-react-app`, `react-app-polyfill`, `react-dev-utils`, `react-scripts`
+  - [#8948](https://github.com/facebook/create-react-app/pull/8948) Drop Node 8 support ([@ianschmitz](https://github.com/ianschmitz))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `cra-template-typescript`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8362](https://github.com/facebook/create-react-app/pull/8362) Upgrade to Jest 25 ([@skovhus](https://github.com/skovhus))
+
+#### :bug: Bug Fix
+
+- `react-scripts`
+  - [#9805](https://github.com/facebook/create-react-app/pull/9805) Fix refreshOverlayInterop module scope error ([@ianschmitz](https://github.com/ianschmitz))
+  - [#9037](https://github.com/facebook/create-react-app/pull/9037) Fix dotenv file loading order ([@Timer](https://github.com/Timer))
+  - [#8700](https://github.com/facebook/create-react-app/pull/8700) Skip stdin resuming to support lerna parallel ([@hieuxlu](https://github.com/hieuxlu))
+  - [#8845](https://github.com/facebook/create-react-app/pull/8845) Do not check for interactive session to shut down dev server ([@jeremywadsack](https://github.com/jeremywadsack))
+  - [#8768](https://github.com/facebook/create-react-app/pull/8768) Add .cjs and .mjs files support to test runner ([@ai](https://github.com/ai))
+- `babel-preset-react-app`, `eslint-config-react-app`, `react-scripts`
+  - [#9788](https://github.com/facebook/create-react-app/pull/9788) fix: resolve new JSX transform issues ([@mrmckeb](https://github.com/mrmckeb))
+- `eslint-config-react-app`, `react-scripts`
+  - [#9683](https://github.com/facebook/create-react-app/pull/9683) fix: resolve ESLint config from appPath ([@mrmckeb](https://github.com/mrmckeb))
+- `create-react-app`
+  - [#9412](https://github.com/facebook/create-react-app/pull/9412) Fix template name handling ([@iansu](https://github.com/iansu))
+- `babel-preset-react-app`
+  - [#9374](https://github.com/facebook/create-react-app/pull/9374) fix: use default modules option from `preset-env` ([@JLHwung](https://github.com/JLHwung))
+- `react-dev-utils`
+  - [#9390](https://github.com/facebook/create-react-app/pull/9390) Publish refreshOverlayInterop with react-dev-utils ([@klinem](https://github.com/klinem))
+  - [#8492](https://github.com/facebook/create-react-app/pull/8492) Replace period in CSS Module classnames ([@evankennedy](https://github.com/evankennedy))
+- `react-dev-utils`, `react-scripts`
+  - [#8694](https://github.com/facebook/create-react-app/pull/8694) Use process.execPath to spawn node subprocess ([@anuraaga](https://github.com/anuraaga))
+- `cra-template-typescript`, `cra-template`, `react-scripts`
+  - [#8734](https://github.com/facebook/create-react-app/pull/8734) fix: handle templates without main package field ([@mrmckeb](https://github.com/mrmckeb))
+
+#### :nail_care: Enhancement
+
+- `react-scripts`
+  - [#9734](https://github.com/facebook/create-react-app/pull/9734) Use new JSX setting with TypeScript 4.1.0 ([@iansu](https://github.com/iansu))
+  - [#8638](https://github.com/facebook/create-react-app/pull/8638) Support source maps for scss in dev environments ([@MKorostoff](https://github.com/MKorostoff))
+  - [#8834](https://github.com/facebook/create-react-app/pull/8834) Don't use webpack multi entry unnecessarily ([@sebmarkbage](https://github.com/sebmarkbage))
+- `babel-preset-react-app`, `eslint-config-react-app`, `react-scripts`
+  - [#9861](https://github.com/facebook/create-react-app/pull/9861) New JSX Transform opt out ([@iansu](https://github.com/iansu))
+- `cra-template`
+  - [#9853](https://github.com/facebook/create-react-app/pull/9853) feat: remove unused React imports ([@mrmckeb](https://github.com/mrmckeb))
+- `babel-preset-react-app`, `react-scripts`
+  - [#9645](https://github.com/facebook/create-react-app/pull/9645) Use new JSX transform with React 17 ([@iansu](https://github.com/iansu))
+- `react-dev-utils`, `react-scripts`
+  - [#9350](https://github.com/facebook/create-react-app/pull/9350) Add Fast Refresh warning when using React < 16.10 ([@iansu](https://github.com/iansu))
+- `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#9375](https://github.com/facebook/create-react-app/pull/9375) feat: better refresh plugin integration ([@pmmmwh](https://github.com/pmmmwh))
+- `cra-template-typescript`, `cra-template`
+  - [#9116](https://github.com/facebook/create-react-app/pull/9116) Add performance relayer + documentation (web-vitals) ([@housseindjirdeh](https://github.com/housseindjirdeh))
+  - [#8705](https://github.com/facebook/create-react-app/pull/8705) Update template tests ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- `create-react-app`
+  - [#8460](https://github.com/facebook/create-react-app/pull/8460) Fix --use-pnp for Yarn 2 ([@nickmccurdy](https://github.com/nickmccurdy))
+
+#### :memo: Documentation
+
+- Other
+  - [#9728](https://github.com/facebook/create-react-app/pull/9728) Upgrade Docusaurus to latest version ([@lex111](https://github.com/lex111))
+  - [#9630](https://github.com/facebook/create-react-app/pull/9630) Emphasise that Next.js is capable of SSG ([@liamness](https://github.com/liamness))
+  - [#9073](https://github.com/facebook/create-react-app/pull/9073) Update running-tests.md ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+  - [#9560](https://github.com/facebook/create-react-app/pull/9560) Update Vercel deployment documentation ([@timothyis](https://github.com/timothyis))
+  - [#9380](https://github.com/facebook/create-react-app/pull/9380) Update running-tests.md ([@andycanderson](https://github.com/andycanderson))
+  - [#9245](https://github.com/facebook/create-react-app/pull/9245) [Doc] fix React Testing Library example ([@sakito21](https://github.com/sakito21))
+  - [#9231](https://github.com/facebook/create-react-app/pull/9231) Clarify wording in adding TypeScript to existing project ([@merelinguist](https://github.com/merelinguist))
+  - [#8895](https://github.com/facebook/create-react-app/pull/8895) Fix chai URL ([@BMorearty](https://github.com/BMorearty))
+  - [#9042](https://github.com/facebook/create-react-app/pull/9042) Update deployment docs for Azure Static Web Apps ([@burkeholland](https://github.com/burkeholland))
+  - [#8246](https://github.com/facebook/create-react-app/pull/8246) Add a VSCode tip in the CSS reset section ([@maazadeeb](https://github.com/maazadeeb))
+  - [#8610](https://github.com/facebook/create-react-app/pull/8610) Update url to see prettier in action ([@M165437](https://github.com/M165437))
+  - [#8684](https://github.com/facebook/create-react-app/pull/8684) Simplify wording in setting-up-your-editor.md ([@coryhouse](https://github.com/coryhouse))
+  - [#8791](https://github.com/facebook/create-react-app/pull/8791) Add setupTests.js to the list of generated files ([@MostafaNawara](https://github.com/MostafaNawara))
+  - [#8763](https://github.com/facebook/create-react-app/pull/8763) Use simplified import of @testing-library/jest-dom ([@Dremora](https://github.com/Dremora))
+- `react-dev-utils`
+  - [#9471](https://github.com/facebook/create-react-app/pull/9471) Fixes in the /packages/react-devs-utils/README.md file ([@caspero-62](https://github.com/caspero-62))
+  - [#8651](https://github.com/facebook/create-react-app/pull/8651) Update build script deployment URL ([@StenAL](https://github.com/StenAL))
+- `cra-template-typescript`, `cra-template`
+  - [#9241](https://github.com/facebook/create-react-app/pull/9241) Updated README.md Templates to Follow ESLint Markdown Rules ([@firehawk09](https://github.com/firehawk09))
+  - [#8406](https://github.com/facebook/create-react-app/pull/8406) Upgrade testing-library packages ([@gnapse](https://github.com/gnapse))
+- `react-scripts`
+  - [#9244](https://github.com/facebook/create-react-app/pull/9244) Explain how to uninstall create-react-app globally ([@nickmccurdy](https://github.com/nickmccurdy))
+  - [#8838](https://github.com/facebook/create-react-app/pull/8838) Support devDependencies in templates ([@mrmckeb](https://github.com/mrmckeb))
+- `cra-template-typescript`, `cra-template`, `react-dev-utils`, `react-scripts`
+  - [#8957](https://github.com/facebook/create-react-app/pull/8957) Move shortlinks to cra.link ([@iansu](https://github.com/iansu))
+- `babel-preset-react-app`
+  - [#5847](https://github.com/facebook/create-react-app/pull/5847) Include absoluteRuntime in babel preset docs ([@iddan](https://github.com/iddan))
 
 #### :house: Internal
 
 - `eslint-config-react-app`
-  - [#5205](https://github.com/facebook/create-react-app/pull/5205) Disable react/no-deprecated rule ([@Timer](https://github.com/Timer))
-  - [#5051](https://github.com/facebook/create-react-app/pull/5051) Adjust ESLint configuration for v5 ([@Timer](https://github.com/Timer))
-  - [#4187](https://github.com/facebook/create-react-app/pull/4187) Change no-unused-vars 'args' from none to all to show warning on dest… ([@goncy](https://github.com/goncy))
-- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `create-react-app`, `eslint-config-react-app`, `react-app-polyfill`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#5192](https://github.com/facebook/create-react-app/pull/5192) Add license file to all packages ([@Timer](https://github.com/Timer))
+  - [#9670](https://github.com/facebook/create-react-app/pull/9670) fix(eslint-config-react-app): Make eslint-plugin-jest an optional peerDependency ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
 - Other
-  - [#5183](https://github.com/facebook/create-react-app/pull/5183) Test class properties ([@Timer](https://github.com/Timer))
-  - [#5146](https://github.com/facebook/create-react-app/pull/5146) Add behavior e2e tests ([@Timer](https://github.com/Timer))
-  - [#4774](https://github.com/facebook/create-react-app/pull/4774) [internal] Use Yarn cache for travis ([@bugzpodder](https://github.com/bugzpodder))
-  - [#4626](https://github.com/facebook/create-react-app/pull/4626) [internal] Fix node 10 test issue ([@bugzpodder](https://github.com/bugzpodder))
-  - [#3816](https://github.com/facebook/create-react-app/pull/3816) Automate screencast recordings ([@marionebl](https://github.com/marionebl))
-- `react-scripts`
-  - [#5180](https://github.com/facebook/create-react-app/pull/5180) Fetch Workbox from CDN ([@Timer](https://github.com/Timer))
-  - [#5170](https://github.com/facebook/create-react-app/pull/5170) Remove thread-loader ([@Timer](https://github.com/Timer))
-  - [#5157](https://github.com/facebook/create-react-app/pull/5157) Forwards args through thread-loader ([@arcanis](https://github.com/arcanis))
-  - [#5085](https://github.com/facebook/create-react-app/pull/5085) Remove highlightCode:true because it's now the default ([@marcofugaro](https://github.com/marcofugaro))
-  - [#5098](https://github.com/facebook/create-react-app/pull/5098) [internal] remove babelrc dependency for kitchensink test ([@bugzpodder](https://github.com/bugzpodder))
-  - [#5076](https://github.com/facebook/create-react-app/pull/5076) Revert "Add loader for .graphql files (#3909)" ([@Timer](https://github.com/Timer))
-  - [#5062](https://github.com/facebook/create-react-app/pull/5062) Upgrade svgr to v2 and disable Prettier & SVGO ([@Timer](https://github.com/Timer))
-  - [#5059](https://github.com/facebook/create-react-app/pull/5059) Switch back to cheap-module-source-map ([@jasonLaster](https://github.com/jasonLaster))
-  - [#4891](https://github.com/facebook/create-react-app/pull/4891) Move favicon.ico <link> to accommodate Chrome ([@thejohnfreeman](https://github.com/thejohnfreeman))
-  - [#5053](https://github.com/facebook/create-react-app/pull/5053) Normalize babel caching across the board ([@Timer](https://github.com/Timer))
-  - [#4550](https://github.com/facebook/create-react-app/pull/4550) Jest 23 and tests ([@bugzpodder](https://github.com/bugzpodder))
-  - [#5043](https://github.com/facebook/create-react-app/pull/5043) Always lint with latest React version ([@Timer](https://github.com/Timer))
-  - [#4955](https://github.com/facebook/create-react-app/pull/4955) Update webpack-dev-server 3.1.5 → 3.1.7 ([@addaleax](https://github.com/addaleax))
-  - [#4776](https://github.com/facebook/create-react-app/pull/4776) Bump babel-loader to fix npm warning ([@frenzzy](https://github.com/frenzzy))
-  - [#4767](https://github.com/facebook/create-react-app/pull/4767) [internal] Separate out kitchensink test into two ([@bugzpodder](https://github.com/bugzpodder))
-  - [#4014](https://github.com/facebook/create-react-app/pull/4014) enable manifest plugin on dev ([@viankakrisna](https://github.com/viankakrisna))
-  - [#4435](https://github.com/facebook/create-react-app/pull/4435) Update paths.js, rename shadow path variable ([@graemecode](https://github.com/graemecode))
-  - [#4331](https://github.com/facebook/create-react-app/pull/4331) Bump `fsevents`. ([@wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg))
-  - [#4174](https://github.com/facebook/create-react-app/pull/4174) Yarn workspace transpilation verification. ([@bradfordlemley](https://github.com/bradfordlemley))
-  - [#3842](https://github.com/facebook/create-react-app/pull/3842) fix small grammatical typo in webpack config documentation ([@andrewerrico](https://github.com/andrewerrico))
+  - [#9258](https://github.com/facebook/create-react-app/pull/9258) fix: Fix azure-pipelines' endOfLine ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+  - [#9102](https://github.com/facebook/create-react-app/pull/9102) Replace Spectrum links with GitHub Discussions ([@iansu](https://github.com/iansu))
+  - [#8656](https://github.com/facebook/create-react-app/pull/8656) Bump acorn from 6.4.0 to 6.4.1 in /docusaurus/website ([@dependabot[bot]](https://github.com/apps/dependabot))
+  - [#8749](https://github.com/facebook/create-react-app/pull/8749) Specify what files are served form a bare local copy ([@challet](https://github.com/challet))
+- `cra-template-typescript`, `cra-template`
+  - [#9252](https://github.com/facebook/create-react-app/pull/9252) feat: Update testing-library dependencies to latest ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
 - `react-dev-utils`
-  - [#5150](https://github.com/facebook/create-react-app/pull/5150) Run behavioral smoke tests with Jest, add output tests ([@Timer](https://github.com/Timer))
-  - [#4514](https://github.com/facebook/create-react-app/pull/4514) Make Sass missing message friendlier ([@Timer](https://github.com/Timer))
-  - [#4138](https://github.com/facebook/create-react-app/pull/4138) Allow ModuleScopePlugin accecpts an array as its appSrc ([@froyog](https://github.com/froyog))
-  - [#4016](https://github.com/facebook/create-react-app/pull/4016) (chore): Alphabetize and clean files-array in react-dev-utils package.json ([@petetnt](https://github.com/petetnt))
-- `babel-preset-react-app`, `react-error-overlay`, `react-scripts`
-  - [#5143](https://github.com/facebook/create-react-app/pull/5143) Switch back to babel-loader ([@iansu](https://github.com/iansu))
+  - [#9059](https://github.com/facebook/create-react-app/pull/9059) clean formatMessage usage ([@chenxsan](https://github.com/chenxsan))
+- `cra-template`
+  - [#7787](https://github.com/facebook/create-react-app/pull/7787) Bump version of Verdaccio ([@ianschmitz](https://github.com/ianschmitz))
 - `babel-preset-react-app`
-  - [#5119](https://github.com/facebook/create-react-app/pull/5119) Clean up @babel/plugin-transform-regenerator ([@lixiaoyan](https://github.com/lixiaoyan))
-  - [#5033](https://github.com/facebook/create-react-app/pull/5033) Lock babel configuration back to IE 9 support (ES5) ([@Timer](https://github.com/Timer))
-- `react-dev-utils`, `react-scripts`
-  - [#5091](https://github.com/facebook/create-react-app/pull/5091) Allow stage 3 css transforms ([@Timer](https://github.com/Timer))
-  - [#5054](https://github.com/facebook/create-react-app/pull/5054) Ensure Babel files get purged on upgrades ([@Timer](https://github.com/Timer))
-  - [#5031](https://github.com/facebook/create-react-app/pull/5031) Upgrade `html-webpack-plugin` to fix tests ([@Timer](https://github.com/Timer))
-- `babel-preset-react-app`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#5080](https://github.com/facebook/create-react-app/pull/5080) Update tons of packages ([@Timer](https://github.com/Timer))
+  - [#8858](https://github.com/facebook/create-react-app/pull/8858) Remove outdated comment ([@availchet](https://github.com/availchet))
+- `react-scripts`
+  - [#8952](https://github.com/facebook/create-react-app/pull/8952) fix react-refresh babel plugin not applied ([@tanhauhau](https://github.com/tanhauhau))
+
+#### :hammer: Underlying Tools
+
+- `react-scripts`
+  - [#9865](https://github.com/facebook/create-react-app/pull/9865) Pass JSX runtime setting to Babel preset in Jest config ([@iansu](https://github.com/iansu))
+  - [#9841](https://github.com/facebook/create-react-app/pull/9841) Bump resolve-url-loader version ([@johannespfeiffer](https://github.com/johannespfeiffer))
+  - [#9348](https://github.com/facebook/create-react-app/pull/9348) Upgrade refresh plugin ([@ianschmitz](https://github.com/ianschmitz))
+  - [#8891](https://github.com/facebook/create-react-app/pull/8891) Bump style-loader to 1.2.1 ([@chybisov](https://github.com/chybisov))
 - `react-error-overlay`, `react-scripts`
-  - [#5050](https://github.com/facebook/create-react-app/pull/5050) Eslint 5.6 ([@bugzpodder](https://github.com/bugzpodder))
-- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#5042](https://github.com/facebook/create-react-app/pull/5042) Upgrade to Babel 7 stable ([@Timer](https://github.com/Timer))
-  - [#4253](https://github.com/facebook/create-react-app/pull/4253) Upgrade Babel to `beta.44` ([@andriijas](https://github.com/andriijas))
-- `confusing-browser-globals`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#5032](https://github.com/facebook/create-react-app/pull/5032) Upgrade `react-scripts` dependencies ([@Timer](https://github.com/Timer))
-- `react-dev-utils`, `react-error-overlay`, `react-scripts`
-  - [#5026](https://github.com/facebook/create-react-app/pull/5026) Switch from uglifyjs to terser ([@Timer](https://github.com/Timer))
-- `create-react-app`
-  - [#4383](https://github.com/facebook/create-react-app/pull/4383) Add Node 10 to Travis config and remove Node 6 ([@iansu](https://github.com/iansu))
-  - [#3853](https://github.com/facebook/create-react-app/pull/3853) pin envinfo version to 3.4.2 ([@bondz](https://github.com/bondz))
-- `react-error-overlay`
-  - [#4211](https://github.com/facebook/create-react-app/pull/4211) Revert lint-related changes made in #4193 ([@NMinhNguyen](https://github.com/NMinhNguyen))
-  - [#4193](https://github.com/facebook/create-react-app/pull/4193) Minor fixes to CI ([@ro-savage](https://github.com/ro-savage))
-- `confusing-browser-globals`, `eslint-config-react-app`
-  - [#2286](https://github.com/facebook/create-react-app/pull/2286) Add restricted globals package ([@sidoshi](https://github.com/sidoshi))
+  - [#9863](https://github.com/facebook/create-react-app/pull/9863) Upgrade to React 17 ([@iansu](https://github.com/iansu))
+  - [#9856](https://github.com/facebook/create-react-app/pull/9856) feat: Update ESLint dependencies ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `cra-template-typescript`, `cra-template`, `create-react-app`, `eslint-config-react-app`, `react-app-polyfill`, `react-error-overlay`, `react-scripts`
+  - [#9857](https://github.com/facebook/create-react-app/pull/9857) feat: Update all dependencies ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- `eslint-config-react-app`, `react-dev-utils`, `react-scripts`
+  - [#9751](https://github.com/facebook/create-react-app/pull/9751) Replace deprecated eslint-loader by eslint-webpack-plugin ([@tooppaaa](https://github.com/tooppaaa))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `cra-template-typescript`, `cra-template`, `create-react-app`, `eslint-config-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#9639](https://github.com/facebook/create-react-app/pull/9639) Upgrade dependencies ([@ianschmitz](https://github.com/ianschmitz))
+- `eslint-config-react-app`, `react-error-overlay`, `react-scripts`
+  - [#9434](https://github.com/facebook/create-react-app/pull/9434) feat: Update ESLint dependencies ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+  - [#9251](https://github.com/facebook/create-react-app/pull/9251) feat: Update ESLint dependencies ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+  - [#8978](https://github.com/facebook/create-react-app/pull/8978) Support ESLint 7.x ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+- `cra-template-typescript`, `cra-template`
+  - [#9526](https://github.com/facebook/create-react-app/pull/9526) Update template dependencies to latest version ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
+  - [#8406](https://github.com/facebook/create-react-app/pull/8406) Upgrade testing-library packages ([@gnapse](https://github.com/gnapse))
+- `react-app-polyfill`
+  - [#9392](https://github.com/facebook/create-react-app/pull/9392) Upgrade whatwg-fetch ([@Lapz](https://github.com/Lapz))
+- `react-dev-utils`
+  - [#8933](https://github.com/facebook/create-react-app/pull/8933) Bump immer version ([@staff0rd](https://github.com/staff0rd))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#9317](https://github.com/facebook/create-react-app/pull/9317) Upgrade dependencies ([@ianschmitz](https://github.com/ianschmitz))
+- `babel-preset-react-app`, `cra-template-typescript`, `cra-template`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#9196](https://github.com/facebook/create-react-app/pull/9196) Upgrade dependencies ([@ianschmitz](https://github.com/ianschmitz))
+  - [#9132](https://github.com/facebook/create-react-app/pull/9132) Upgrade dependencies ([@ianschmitz](https://github.com/ianschmitz))
+- `babel-plugin-named-asset-import`, `confusing-browser-globals`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8955](https://github.com/facebook/create-react-app/pull/8955) Upgrade to Jest 26 ([@ianschmitz](https://github.com/ianschmitz))
+- `babel-preset-react-app`, `create-react-app`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#9081](https://github.com/facebook/create-react-app/pull/9081) Update packages ([@ianschmitz](https://github.com/ianschmitz))
+  - [#8947](https://github.com/facebook/create-react-app/pull/8947) Minor/patch dependency upgrades ([@ianschmitz](https://github.com/ianschmitz))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `create-react-app`, `react-app-polyfill`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8950](https://github.com/facebook/create-react-app/pull/8950) Dependency major version upgrades ([@ianschmitz](https://github.com/ianschmitz))
 - `eslint-config-react-app`, `react-scripts`
-  - [#3723](https://github.com/facebook/create-react-app/pull/3723) Updating ESlint to ^4.15.0 and adding new rules to config ([@chrislaughlin](https://github.com/chrislaughlin))
+  - [#8939](https://github.com/facebook/create-react-app/pull/8939) Bump React Hooks ESLint plugin to 4.0.0 ([@gaearon](https://github.com/gaearon))
+- `babel-plugin-named-asset-import`, `babel-preset-react-app`, `confusing-browser-globals`, `cra-template-typescript`, `react-dev-utils`, `react-error-overlay`, `react-scripts`
+  - [#8362](https://github.com/facebook/create-react-app/pull/8362) Upgrade to Jest 25 ([@skovhus](https://github.com/skovhus))
 
-#### Committers: 116
+#### Committers: 63
 
-- A.J. Roberts ([@detrohutt](https://github.com/detrohutt))
-- Aaron Reisman ([@lifeiscontent](https://github.com/lifeiscontent))
-- Ade Viankakrisna Fadlil ([@viankakrisna](https://github.com/viankakrisna))
-- Albert Still ([@albertstill](https://github.com/albertstill))
-- Alex Brazier ([@alexbrazier](https://github.com/alexbrazier))
-- Andreas Cederström ([@andriijas](https://github.com/andriijas))
-- Andrew ([@andrewerrico](https://github.com/andrewerrico))
-- Andrew Clark ([@acdlite](https://github.com/acdlite))
-- Andrew Ho ([@andrwh](https://github.com/andrwh))
+- Adam Charron ([@charrondev](https://github.com/charrondev))
+- Alex Krolick ([@alexkrolick](https://github.com/alexkrolick))
+- Alexey Pyltsyn ([@lex111](https://github.com/lex111))
 - Andrey Sitnik ([@ai](https://github.com/ai))
-- Anna Henningsen ([@addaleax](https://github.com/addaleax))
-- Anton Rusinov ([@RusinovAnton](https://github.com/RusinovAnton))
-- Antti Ahti ([@apaatsio](https://github.com/apaatsio))
-- Ashley Otero ([@Ashleyotero](https://github.com/Ashleyotero))
-- Bond ([@bondz](https://github.com/bondz))
-- Bradford Lemley ([@bradfordlemley](https://github.com/bradfordlemley))
-- Brian Muenzenmeyer ([@bmuenzenmeyer](https://github.com/bmuenzenmeyer))
-- Brian Ng ([@existentialism](https://github.com/existentialism))
-- Chad Greenburg ([@CGreenburg](https://github.com/CGreenburg))
-- Chris Laughlin ([@chrislaughlin](https://github.com/chrislaughlin))
-- Clement Hoang ([@clemmy](https://github.com/clemmy))
-- Conrad Buck ([@conartist6](https://github.com/conartist6))
-- Craig Mulligan ([@hobochild](https://github.com/hobochild))
+- Andy C ([@andycanderson](https://github.com/andycanderson))
+- Anuraag Agrawal ([@anuraaga](https://github.com/anuraaga))
+- Braedon Gough ([@braedongough](https://github.com/braedongough))
+- Brian Morearty ([@BMorearty](https://github.com/BMorearty))
+- Brody McKee ([@mrmckeb](https://github.com/mrmckeb))
+- Burke Holland ([@burkeholland](https://github.com/burkeholland))
+- Chetanya Kandhari ([@availchet](https://github.com/availchet))
+- Clément DUNGLER ([@tooppaaa](https://github.com/tooppaaa))
+- Clément Hallet ([@challet](https://github.com/challet))
+- Cory House ([@coryhouse](https://github.com/coryhouse))
 - Dan Abramov ([@gaearon](https://github.com/gaearon))
-- Daniel ([@danielberndt](https://github.com/danielberndt))
-- Daniel Wang ([@dwang](https://github.com/dwang))
-- David Moodie ([@davejm](https://github.com/davejm))
-- Dmitriy Sadkovoy ([@sadkovoy](https://github.com/sadkovoy))
-- Eduardo Rabelo ([@oieduardorabelo](https://github.com/oieduardorabelo))
-- Edward Ren (Eddie) ([@EdwaRen](https://github.com/EdwaRen))
+- Dylan Brookes ([@merelinguist](https://github.com/merelinguist))
 - Ernesto García ([@gnapse](https://github.com/gnapse))
-- Eugene Kopich ([@web2033](https://github.com/web2033))
-- Fabiano Brito ([@Fabianopb](https://github.com/Fabianopb))
-- Fabrizio Cucci ([@fabriziocucci](https://github.com/fabriziocucci))
-- Fredrik Palmquist ([@fiddep](https://github.com/fiddep))
-- Futa Ogawa ([@ogawa0071](https://github.com/ogawa0071))
-- Gary Meehan ([@garmeeh](https://github.com/garmeeh))
-- Gonzalo Pozzo ([@goncy](https://github.com/goncy))
-- Grady Kuhnline ([@heygrady](https://github.com/heygrady))
-- Graeme ([@graemecode](https://github.com/graemecode))
-- Harry Moreno ([@morenoh149](https://github.com/morenoh149))
+- Eugene Chybisov ([@chybisov](https://github.com/chybisov))
+- Evan Kennedy ([@evankennedy](https://github.com/evankennedy))
+- Gerrit Alex ([@ljosberinn](https://github.com/ljosberinn))
+- Hieu Do ([@hieuxlu](https://github.com/hieuxlu))
+- Hongbo Miao ([@Hongbo-Miao](https://github.com/Hongbo-Miao))
+- Houssein Djirdeh ([@housseindjirdeh](https://github.com/housseindjirdeh))
+- Huáng Jùnliàng ([@JLHwung](https://github.com/JLHwung))
+- Ian Schmitz ([@ianschmitz](https://github.com/ianschmitz))
 - Ian Sutherland ([@iansu](https://github.com/iansu))
-- Ideveloper ([@zx6658](https://github.com/zx6658))
-- Igor Fedyukin ([@ifedyukin](https://github.com/ifedyukin))
-- Irvin Denzel Torcuato ([@identor](https://github.com/identor))
-- JK ([@jkzing](https://github.com/jkzing))
-- Jack Franklin ([@jackfranklin](https://github.com/jackfranklin))
-- Jack Zhao ([@bugzpodder](https://github.com/bugzpodder))
-- James B. Pollack ([@imgntn](https://github.com/imgntn))
-- James Simoes ([@jamesvsshark](https://github.com/jamesvsshark))
-- Jason Laster ([@jasonLaster](https://github.com/jasonLaster))
-- Jed Fox ([@j-f1](https://github.com/j-f1))
+- Iddan Aaronsohn ([@iddan](https://github.com/iddan))
+- Jakob Krigovsky ([@sonicdoe](https://github.com/sonicdoe))
 - Jeffrey Posnick ([@jeffposnick](https://github.com/jeffposnick))
-- Jerry ([@jMuzsik](https://github.com/jMuzsik))
-- Jih-Chi Lee ([@jihchi](https://github.com/jihchi))
+- Jeremy Wadsack ([@jeremywadsack](https://github.com/jeremywadsack))
+- Jeroen Claassens ([@Favna](https://github.com/Favna))
 - Joe Haddad ([@Timer](https://github.com/Timer))
-- Joel George V ([@joelgeorgev](https://github.com/joelgeorgev))
-- John Freeman ([@thejohnfreeman](https://github.com/thejohnfreeman))
-- Joshua Comeau ([@joshwcomeau](https://github.com/joshwcomeau))
-- João Paquim ([@jpaquim](https://github.com/jpaquim))
-- Kent C. Dodds ([@kentcdodds](https://github.com/kentcdodds))
-- Kévin Dunglas ([@dunglas](https://github.com/dunglas))
-- Levin Rickert ([@levrik](https://github.com/levrik))
-- Luis Nell ([@originell](https://github.com/originell))
-- Luke Jackson ([@lukejacksonn](https://github.com/lukejacksonn))
-- Maciej Kasprzyk ([@maciej-ka](https://github.com/maciej-ka))
-- Magnús Örn Gylfason ([@mg](https://github.com/mg))
-- Marco Fugaro ([@marcofugaro](https://github.com/marcofugaro))
-- Marco Slooten ([@mslooten](https://github.com/mslooten))
-- Marek Suscak ([@mareksuscak](https://github.com/mareksuscak))
-- Mario Nebl ([@marionebl](https://github.com/marionebl))
-- Marius Gedminas ([@mgedmin](https://github.com/mgedmin))
-- Marko Kaznovac ([@kaznovac](https://github.com/kaznovac))
-- Martin Lechner ([@martinlechner1](https://github.com/martinlechner1))
-- Maurice de Beijer ([@mauricedb](https://github.com/mauricedb))
-- Maël Nison ([@arcanis](https://github.com/arcanis))
+- Johannes Pfeiffer ([@johannespfeiffer](https://github.com/johannespfeiffer))
+- Josemaria Nriagu ([@josenriagu](https://github.com/josenriagu))
+- Kenneth Skovhus ([@skovhus](https://github.com/skovhus))
+- Kirill Korolyov ([@Dremora](https://github.com/Dremora))
+- Kline Moralee ([@klinem](https://github.com/klinem))
+- Lenard Pratt ([@Lapz](https://github.com/Lapz))
+- Liam Duffy ([@liamness](https://github.com/liamness))
+- Maaz Syed Adeeb ([@maazadeeb](https://github.com/maazadeeb))
+- Marc Hassan ([@mhassan1](https://github.com/mhassan1))
+- Matt Korostoff ([@MKorostoff](https://github.com/MKorostoff))
+- Michael Mok ([@pmmmwh](https://github.com/pmmmwh))
+- Michael Schmidt-Voigt ([@M165437](https://github.com/M165437))
 - Michaël De Boey ([@MichaelDeBoey](https://github.com/MichaelDeBoey))
-- Miguel Palau ([@shelldandy](https://github.com/shelldandy))
-- Mike Kusold ([@kusold](https://github.com/kusold))
-- Mike Wilcox ([@mjw56](https://github.com/mjw56))
-- Mikhail Osher ([@miraage](https://github.com/miraage))
 - Minh Nguyen ([@NMinhNguyen](https://github.com/NMinhNguyen))
-- Nick Bartlett ([@tteltrab](https://github.com/tteltrab))
-- PatrickJS ([@gdi2290](https://github.com/gdi2290))
-- Pete Nykänen ([@petetnt](https://github.com/petetnt))
-- Piotr ([@piotr-cz](https://github.com/piotr-cz))
-- Rami ([@evilchuck](https://github.com/evilchuck))
-- Reuben Antz ([@antzshrek](https://github.com/antzshrek))
-- Ro Savage ([@ro-savage](https://github.com/ro-savage))
-- Rob Grochowicz ([@rgrochowicz](https://github.com/rgrochowicz))
-- Robin van der Vleuten ([@robinvdvleuten](https://github.com/robinvdvleuten))
-- Sagiv ben giat ([@sag1v](https://github.com/sag1v))
-- Saimon Moore ([@saimonmoore](https://github.com/saimonmoore))
-- Sendil Kumar N ([@sendilkumarn](https://github.com/sendilkumarn))
-- Siddharth Doshi ([@sidoshi](https://github.com/sidoshi))
-- Stas Rudakou ([@nott](https://github.com/nott))
-- Stefan Feješ ([@fejes713](https://github.com/fejes713))
-- Thiago Galvani ([@thiagopaiva99](https://github.com/thiagopaiva99))
-- Tom Coleman ([@tmeasday](https://github.com/tmeasday))
-- Tore Hammervoll ([@skoging](https://github.com/skoging))
-- Trevor Brindle ([@tabrindle](https://github.com/tabrindle))
-- Vicente Plata ([@xnt](https://github.com/xnt))
-- Victor Amupitan ([@amupitan](https://github.com/amupitan))
-- Viktor Havrylin ([@Fer0x](https://github.com/Fer0x))
-- Vladimir Kutepov ([@frenzzy](https://github.com/frenzzy))
-- William Chargin ([@wchargin](https://github.com/wchargin))
-- XiaoYan Li ([@lixiaoyan](https://github.com/lixiaoyan))
-- [@Plortinus](https://github.com/Plortinus)
-- [@arianon](https://github.com/arianon)
-- [@everdimension](https://github.com/everdimension)
-- [@nikolas2](https://github.com/nikolas2)
-- [@stereobooster](https://github.com/stereobooster)
-- [@wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg)
-- aisensiy ([@aisensiy](https://github.com/aisensiy))
-- froyog ([@froyog](https://github.com/froyog))
-- shawn wang ([@sw-yx](https://github.com/sw-yx))
+- Mostafa Nawara ([@MostafaNawara](https://github.com/MostafaNawara))
+- Nick McCurdy ([@nickmccurdy](https://github.com/nickmccurdy))
+- Rafael Quijada ([@firehawk09](https://github.com/firehawk09))
+- Raihan Nismara ([@raihan71](https://github.com/raihan71))
+- Sakito Mukai ([@sakito21](https://github.com/sakito21))
+- Sam Chen ([@chenxsan](https://github.com/chenxsan))
+- Sam Saccone ([@samccone](https://github.com/samccone))
+- Sebastian Markbåge ([@sebmarkbage](https://github.com/sebmarkbage))
+- Shakib Hossain ([@shakib609](https://github.com/shakib609))
+- Simen Bekkhus ([@SimenB](https://github.com/SimenB))
+- Stafford Williams ([@staff0rd](https://github.com/staff0rd))
+- Sten Arthur Laane ([@StenAL](https://github.com/StenAL))
+- Tan Li Hau ([@tanhauhau](https://github.com/tanhauhau))
+- Timothy ([@timothyis](https://github.com/timothyis))
+- Tobias Büschel ([@tobiasbueschel](https://github.com/tobiasbueschel))
+- Webdot_30 ([@caspero-62](https://github.com/caspero-62))
+- [@atlanteh](https://github.com/atlanteh)
 
-## Releases Before 2.x
+## Releases Before 4.x
 
-Please refer to [CHANGELOG-1.x.md](./CHANGELOG-1.x.md) for earlier versions.
+Please refer to [CHANGELOG-3.x.md](./CHANGELOG-3.x.md) for earlier versions.
